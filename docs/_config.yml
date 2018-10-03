@@ -121,54 +121,60 @@ defaults:
       type: examples
     values:
       category: "examples"
+      tags: "Examples"
       layout: single
       sidebar:
-        nav: "docs" 
+        nav: "units" 
   # unit01
   - scope:
       path: ""
       type: unit01
     values:
       category: "Unit 01"
+      tags: "Unit|01"
       layout: single
       sidebar:
-        nav: "docs" 
+        nav: "units" 
   # unit02
   - scope:
       path: ""
       type: unit02
     values:
       category: "Unit 02"
+      tags: "Unit|02"
       layout: single
       sidebar:
-        nav: "docs" 
+        nav: "units" 
   # unit03
   - scope:
       path: ""
       type: unit03
     values:
       category: "Unit 03"
+      tags: "Unit|03"
       layout: single
       sidebar:
-        nav: "docs" 
+        nav: "units" 
   # unit04
   - scope:
       path: ""
       type: unit04
     values:
       category: "Unit 04"
+      tags: "Unit|04"
       layout: single
       sidebar:
-        nav: "docs" 
+        nav: "units" 
   # unit05
   - scope:
       path: ""
       type: unit05
     values:
       category: "Unit 05"
+      tags: "Unit|05"
       layout: single
       sidebar:
-        nav: "docs" 
+        nav: "units" 
   # pages
   - scope:
       path: "_pages"
