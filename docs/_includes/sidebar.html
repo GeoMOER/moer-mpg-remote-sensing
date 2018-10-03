@@ -1,29 +1,10 @@
 {% if page.author_profile or layout.author_profile or page.sidebar %}
- 
+
   <div class="sidebar sticky">
   {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
 
-  {% for collection in site.collections %}
-    <nav class="nav__list">
-      <input id="ac-toc" name="accordion-toc" type="checkbox">
-	  <label for="ac-toc">Toggle Menu</label>
-  	    <ul class="nav__items">
-	      {% assign mydocs = site[collection.label] | group_by: 'category' %}
-          {% for cat in mydocs %}
-            <li>
-	          <span class="nav__sub-title">{{ cat.name}}</span>
-              <ul>
-                {% assign items = cat.items | sort: 'order' %}
-                {% for item in items %}
-                  <li><a href="{{ item.url | prepend: site.baseurl}}" class>{{ item.title }}</a></li>
-                {% endfor %}
-              </ul>
-            </li>
-          {% endfor %}
-        </ul>
-    </nav>
-  {% endfor %}
-
+  {% include sidebar_units %}
+  
   {% if page.sidebar %}
     {% for s in page.sidebar %}
       {% if s.image %}
@@ -44,3 +25,6 @@
   {% endif %}
   </div>
 {% endif %}
+
+
+
