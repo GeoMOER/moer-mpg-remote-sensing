@@ -18,15 +18,15 @@ feature_row_ilos:
   title: Intended learning outcomes
   excerpt: "At the end of this course you should be able
   
-    * to research state of the art remote sensing methods and design workflows suitable to solve common remote sensing problems,
+    * to research remote sensing methods and design workflows suitable to solve common remote sensing problems,
 
-	* to deploy your workflows using geo-information science tools, R scripts and collaborative code management platforms for task management and issue tracking, 
+	* to deploy your remote sensing workflows using geo-information science tools, R scripts and collaborative code management platforms for task management and issue tracking, 
 
-	* to critically evaluate your analysis results using reliable error estimates,
+	* to critically evaluate your remote sensing analysis,
 	
-	* to document and communicate your workflow and analysis results,
+	* to document and communicate your remote sensing workflow and analysis results,
 
-	* to reflect your work flow for potential improvements.
+	* to reflect your project workflow for potential improvements.
 	"
 ---
 
@@ -34,16 +34,14 @@ feature_row_ilos:
 
 Field surveys generally face the compromise between their level of detail, their extend and their temporal repetition. One can either study selected processes in detail on a very limited number of observation sites or focus on a more landscape oriented survey using more generalized observations. The restrictions can be loosened by linking survey information to area wide remote sensing observations and the modelling of raster maps which can further be used for scientific analysis. 
 
-Remote sensing has a history of more than 150 years and is a well established, cost-effective and powerful tool but it has to be applied with caution in order to gain robust results. The advent of high performance computing along with machine learning algorithms has just opened up a new chapter in data mining and information retrieval using a wide variety of ground-based, airborne and satellite sensors. This requires a large variety of skills related to data handling, machine learning, team-based software development and workflow documentation and the presentation and discussion of results. 
-
-This course provides room for an intensive experience in advanced remote sensing data analysis.
+Remote sensing has a history of more than 150 years and is a well established, cost-effective and powerful tool but it has to be applied with caution in order to gain robust results. The advent of high performance computing along with machine learning algorithms has just opened up a new chapter in data mining and information retrieval using a wide variety of ground-based, airborne and satellite sensors. This requires a large variety of skills related to data handling, machine learning, team-based software development and workflow documentation and the presentation and discussion of results.
 
 {% include feature_row id="feature_row_ilos" type="left" %}
 
 
 # Course features
 
-The course is integrated in the research of the Nature 4.0 project, heavily linked to the parallel [Geo Information Systems](https://oer.uni-marburg.de/ilias.php?ref_id=327&cmdClass=ilrepositorygui&cmdNode=r5&baseClass=ilrepositorygui){:target="_blank"} and [Data Analysis](https://oer.uni-marburg.de/ilias.php?ref_id=326&cmdClass=ilrepositorygui&cmdNode=r5&baseClass=ilrepositorygui){:target="_blank"} courses. It is intended as a blended learning module in our study program although the provided introductions, explanations and examples might be useful for self-study, too.
+The course is linked to the research of the Nature 4.0 project, heavily integrated into the parallel [Geo Information Systems](https://oer.uni-marburg.de/ilias.php?ref_id=327&cmdClass=ilrepositorygui&cmdNode=r5&baseClass=ilrepositorygui){:target="_blank"} and build upon the parallel [Data Analysis](https://oer.uni-marburg.de/ilias.php?ref_id=326&cmdClass=ilrepositorygui&cmdNode=r5&baseClass=ilrepositorygui){:target="_blank"} courses. It is intended as a blended learning module in our study program although the provided introductions, explanations and examples might be useful for self-study, too.
 
 
 
@@ -51,14 +49,23 @@ The course is integrated in the research of the Nature 4.0 project, heavily link
 
 | Session | Topic | Content |
 |-------|--------|---------|
-| 1 | Remote Sensing in next-generation nature conservation | Get to know basic remote sensing principles, the Nature 4.0 project approach and the study area of this course |
-| Seeing the the crowns for the wood |||
-| 2 | Delineating objects in remotely sensed imagery | Research and present common techniques and find similarities and differences |
-| 3 | Identifying trees in the wood | Develop a workflow for delineating tree crowns and evaluate your task management with your peers |
-| 4 | Communicate your findings | Document your methods and results and critically evaluate your findings. |
-| 5 | What have i done? | Reflect your work and discuss potential improvements, get some Feedback and say goodbye. |
-| Seeing the tree species for the wood |||
-
+|| **Remote sensing basics** ||
+| 1 | Remote Sensing in environmental research and nature conservation | Get to know basic remote sensing principles, the Nature 4.0 project approach and the study area of this course |
+| 2 | Understanding remote sensing data and how to handle it | Reflect the guiding principals of remote sensing and check out various methods for handling raster datasets and raster information retrieval in R and GIS |
+|| **Project 1: A picture is worth a thousand words** | Baseline image processing |
+| 3 | Problem: Comprehensive image collection for tree delineation, species prediction, and heterogeneity mapping | Decompose the problem, identify research tasks and sketch a project worklfow |
+| 4 | Spotlight: Data preprocessing | Deal with data preprocessing topics and continue your project | 
+| 5 | Spotlight: Artificial images | Deal with artificial images and continue your project | 
+| 6 | Spotlight: Land-cover classification | Deal with land-cover classifications and continue your project | 
+| 7 | Continue your project ||
+| 8 | Project 1 presentation | Present your project results to your peers |
+| 9 | Peer feedback on project presentation | Evaluate the work of your peers, reflect your own workflow and discuss potential improvements |
+|| **Project 2: Seeing the tree species for the wood** | Machine-learning-based prediction of species |
+| 10 | Problem: Predict tree species in space | Decompose the problem, identify research tasks and sketch a project worklfow |
+| 11 | Spotlight: Machine learning models and spatial data | Deal with machine learning models and error estimation strategies for spatial data |
+| 12 | Continue your project ||
+| 13 | Project 2 presentation | Present your project results to your peers |
+| 14 | Feedback and goodbye | Get feedback from your peers and instructors, tell us how you self-assess your skills and happy holidays |
 
 
 # Deliverables
