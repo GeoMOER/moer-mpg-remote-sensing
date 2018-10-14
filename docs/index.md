@@ -72,6 +72,8 @@ The course is linked to the research of the Nature 4.0 project, heavily integrat
 
 The course requires peer review activities as part of the workflow management and software development, the computation of two remote sensing products according to problem solving assignments and a scientific poster presentation that introduces, describes and discusses the delivered remote sensing products.
 
+The graded course certificate will be based on a team-based portfolio hosted as a team based repository on GitHub. The individual portfolio items are defined in the respective course assignments. In general, such an item is an R markdown or PDF file.
+
 
 
 
