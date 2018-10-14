@@ -1,5 +1,5 @@
 ---
-title: "Assignment: Data collection and working environment"
+title: "Unmarked Assignment: Data Collection and Working Environment"
 toc: true
 toc_label: In this worksheet
 ---
@@ -12,6 +12,7 @@ After completing this worksheet, you should have a structured working environmen
   * [R](https://cran.r-project.org/) — the interpreter can be installed on any operation system.
   * [RStudio](https://www.rstudio.com/) — we recommend to use R Studio for (interactive) programming with R.
   * [Git](https://git-scm.com/downloads) environment for your operating system. For Windows users with little experience on the command line we recommend [GitHub Desktop](https://desktop.github.com/).
+  * Remote sensing data provided by the course instructors.
 
 ## Remote sensing data I/O
 Please create the working environment for this course following the mandatory settings provided by the [info on assignments]({{ site.baseurl }}/unit01/unit01-04_notes_on_assignments#mandatory-working-environment).

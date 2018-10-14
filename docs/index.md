@@ -70,7 +70,7 @@ The course is linked to the research of the Nature 4.0 project, heavily integrat
 
 # Deliverables
 
-The graded course certificate will be based on a team-based portfolio hosted as a team based repository on GitHub. The individual portfolio items are defined in the respective course assignments along with the information if they will be marked or not. Marked portfolio items encompass the presentation and peer-review of two posters which inform about the results of two problem solving assignments related to the computation and analysis of remote sensing products.
+The graded course certificate will be based on a team portfolio hosted as a team repository on GitHub. The individual portfolio items are defined in the respective course assignments along with the information if they will be marked or not. Marked portfolio items encompass the presentation and peer-review of two posters which inform about the results of two problem solving assignments related to the computation and analysis of remote sensing products.
 
 
 # Preparation and prerequisites
