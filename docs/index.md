@@ -8,7 +8,7 @@ header:
   overlay_image: "/assets/images/envobs_title.jpg"
   caption: 'Photo credit: [**Environmental Informatics Marburg**](https://www.flickr.com/environmentalinformatics-marburg/)'
   cta_label: Go to course units
-  cta_url: "/units/index.html"
+  cta_url: "/units.html"
 excerpt: Handle remote sensing information, define workflows, identify objects, and predict land cover in space.
 feature_row_intro:
 - excerpt: Master level course in [Physical Geography](https://www.uni-marburg.de/fb19/studium/studiengaenge/msc-phygeo) at Marburg University
