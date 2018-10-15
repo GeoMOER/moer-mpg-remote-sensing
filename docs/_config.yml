@@ -23,8 +23,7 @@
 
 # Serve on GitHub
 url: https://marburg-open-courseware.github.io
-baseurl: "/moer-msc-remote-sensing"
-
+baseurl: "/moer-msc-remote-sensing/"
 
 ##### Title ###################################################################
 title: Lab of Environmental Informatics
