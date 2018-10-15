@@ -19,10 +19,10 @@
 ##### URL #####################################################################
 # Serve on OER
 #url: "https://oer.uni-marburg.de"
-#baseurl: "/data/mriliasmooc/lm_data/lm_2422"
+#baseurl: "/data/mriliasmooc/lm_data/lm_2779"
 
 # Serve on GitHub
-url: https://marburg-open-courseware.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url: https://marburg-open-courseware.github.io
 baseurl: "/moer-msc-remote-sensing"
 
 
@@ -188,6 +188,12 @@ defaults:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-admin
+  - jekyll-paginate
+  - jekyll-gist
+  - jemoji
+  - jekyll-include-cache
+  - jekyll-algolia
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
