@@ -22,4 +22,4 @@ The objective of Nature 4.0 is the development of a prototype of Natur 4.0, a mo
 The goal, which can only be achieved through a cross-disciplinary network, connects scientists from geography, computer science, mathematics and ecology with nature conservation experts from the private sector and administration. It bridges the gap between basic research and applied research and involves schools and citizens in scientific research. The innovation potential sharpens the profile area "Biodiversity and Climate" of the Philipps University as well as the profile area "Climate and Climate Impact Research" of the research campus Mittelhessen and complements the existing expertise. Thus, Nature 4.0 strengthens the location Hessen and provides an innovative instrument for environmental observation.
 
 ### More Information
-A more detailed overview of the project, its sub-projects and the sensors used can be found at [Nature40.org](http://nature40.org).
+A more detailed overview of the project, its sub-projects and the sensors used can be found at [Nature40.org](http://nature40.org){:target="_blank"}.

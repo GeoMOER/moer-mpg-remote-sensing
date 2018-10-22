@@ -10,6 +10,8 @@ Setting up a working or project environment requires the definition of different
 
 For setting up a project environment, one can use a set-up script and the `link2GI` package. 
 
+It is a good idea to name the setup script somethin like `000_setup.R` and source it into every other script of the same project (i.e. include `source(<path-to-git-repository-folder>/src/000_setup.R)`)
+
 ## Loading the libraries
 The first section of the setup script handles the loading of all required libraries.
 
@@ -31,14 +33,16 @@ The next section of the setup-script handles the definition of folder pathes. On
 # Set pathes -------------------------------------------------------------------
 # Automatically set root direcory depending on booted system
 if(Sys.info()["sysname"] == "Windows"){
-  filepath_base = "C:/Users/tnauss/permanent/edu/msc-phygeo-envinsys-plygrnd"
+  filepath_base = "C:/Users/tnauss/permanent/edu/mpg-envinsys-plygrnd"
 } else {
-  filepath_base = "/media/memory/permanent/edu/msc-phygeo-envinsys-plygrnd"
+  filepath_base = "/media/memory/permanent/edu/mpg-envinsys-plygrnd"
 }
 
 # Set project specific subfolders
-project_folders = c("data/", "data/aerial/", "data/lidar/", "data/grass/", 
-                    "data/tmp/", "run/", "log/", "name_of_github_team_repository/")
+project_folders = c("data/", 
+                    "data/aerial/", "data/lidar/", "data/grass/", 
+                    "data/data_mof", "data/tmp/", 
+                    "run/", "log/", "name_of_github_team_repository/src/")
 
 envrmt = initProj(projRootDir = filepath_base, GRASSlocation = "data/grass",
                   projFolders = project_folders, path_prefix = "path_", 
@@ -51,7 +55,7 @@ print(envrmt$path_data_tmp)
 ```
 
 ```
-## [1] "C:/Users/tnauss/permanent/edu/msc-phygeo-envinsys-plygrnd/data/tmp/"
+## [1] "C:/Users/tnauss/permanent/edu/mpg-envinsys-plygrnd/data/tmp/"
 ```
 
 If the `raster` package has been loaded, it is a good choice to set the temp directory to the one of the just defined project environment.
