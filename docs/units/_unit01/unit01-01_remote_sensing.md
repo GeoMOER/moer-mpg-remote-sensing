@@ -2,7 +2,7 @@
 title: Remote Sensing in Environmental Research and Conservation
 ---
 
-This unit examines the role of remote sensing in environmental research and nature conservation by introducing the concept of the Nature 4.0 project. The course activities will take place within *Marburg Open Forest*, the forest are of Marburg University which provides an open space for research and education.
+This unit illustrates the role of remote sensing in environmental research and nature conservation and exemplary introduces the concept of the Nature 4.0 project. The course activities will take place within *Marburg Open Forest*, the forest are of Marburg University which provides an open space for research and education.
 
 ## Remote sensing in scientific literature
 Remote sensing has many flavors and fields of application. To get a better idea of this, the following links will route you to journal homepages where you can explore some of the latest publications:

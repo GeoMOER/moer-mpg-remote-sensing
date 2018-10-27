@@ -39,10 +39,12 @@ if(Sys.info()["sysname"] == "Windows"){
 }
 
 # Set project specific subfolders
-project_folders = c("data/", 
-                    "data/aerial/", "data/lidar/", "data/grass/", 
+project_folders = c("data/",                                 # data folders
+                    "data/aerial/org/", "data/lidar/org/", "data/grass/", 
                     "data/data_mof", "data/tmp/", 
-                    "run/", "log/", "name_of_github_team_repository/src/")
+                    "run/", "log/",                          # bins and logging
+                    "name_of_github_team_repository/src/",   # source code
+                    "name_of_github_team_repository/doc/")   # markdown etc. 
 
 envrmt = initProj(projRootDir = filepath_base, GRASSlocation = "data/grass",
                   projFolders = project_folders, path_prefix = "path_", 
@@ -79,3 +81,14 @@ saga_path = findSAGA()
 # Find OTB installations
 otb_path = findOTB()
 ```
+
+## More information on the link2GI package
+
+<div id="presentation-embed-38909962"></div>
+<script src='https://slideslive.com/embed_presentation.js'></script>
+<script>
+    embed = new SlidesLiveEmbed('presentation-embed-38909962', {
+        presentationId: '38909962',
+        autoPlay: false // change to true to autoplay the embedded presentation
+    });
+</script>
