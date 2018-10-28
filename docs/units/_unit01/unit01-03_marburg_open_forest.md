@@ -6,7 +6,7 @@ The forest of Marburg University is located southeast of Caldern. The activities
 
 
 {% include media url="/assets/misc/mof_map.html" %}
-[Larger version of the map]({{ site.baseurl }}/assets/misc/mof_map.html){:target="_blank"}
+[Full-screen version of the map]({{ site.baseurl }}/assets/misc/mof_map.html){:target="_blank"}
 
 To get a little more into the Marburg Open Forest mood, enjoy looking through some impressions.
 

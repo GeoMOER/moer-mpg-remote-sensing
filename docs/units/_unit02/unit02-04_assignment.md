@@ -1,5 +1,5 @@
 ---
-title: "Unmarked Assignment: Aerial image preprocessing"
+title: "Unmarked Assignment: Image preprocessing"
 toc: true
 toc_label: In this worksheet
 ---
