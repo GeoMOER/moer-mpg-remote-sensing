@@ -19,7 +19,7 @@ Please create the working environment for this course following the mandatory se
 
 Download the aerial images required for this course using the link provided by the course instructors. 
 
-Please write an R markdown script with html output which describes how to read and (very basically) visualize the provided aerial images in R.
+Please write an R markdown script with html output which describes how to read and (very basically) visualize the provided aerial images in R. They are provided as GeoTIFF and come in an ETRS89/UTM 32 north projection.
 
 Save your Rmd file in your course repository, knitr it, update (i.e. commit) your local repository and publish (i.e. push) it to the GitHub classroom. Make sure that the created html file is also part of your GitHub repository.
 
