@@ -5,8 +5,10 @@ title: "Image preprocessing"
 Basic image preprocessing encompasses the (i) making sure that every dataset has the same projection, (ii) cropping of the dataset to your region of interest, (iii) making sure that NA values are defined in a comparable (or even the same) manner and (iv) tiling or merging datesets depending on both the requirements of functions intended to use during the analysis and potential computer memory limitations. In addition, there will likely be other flaws in the data which have to be taken care of before continouing with the actual analysis. 
 
 ## Aerial images of Marburg Open Forest
-The aerial images provided within this course cover the area of Marburg Open Forest. The dataset consists of several tiles.
+The aerial images provided within this course cover the area of Marburg Open Forest. The dataset consists of several tiles which are visualized in a very reduced resolution in the map below.
 
+{% include media url="/assets/misc/aerial_images_map.html" %}
+[Larger version of the map]({{ site.baseurl }}/assets/misc/aerial_images_map.html){:target="_blank"}
 
 
 ## Defining a first preprocessing workflow
