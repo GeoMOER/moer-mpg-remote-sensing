@@ -15,7 +15,8 @@ aerial_stacks = lapply(aerial_files, function(f){
   stack(f)
 })
 
-m <- mapview(aerial_stacks[[1]], maxpixels=10000) + aerial_stacks[[2]]
+mapviewOptions(mapview.maxpixels = 5000)
+m <- mapview(aerial_stacks[[1]]) + aerial_stacks[[2]]
 
 ## create standalone .html
-mapshot(m, url = "mof_map.html")
+mapshot(m, url = "aerial_images_map.html")
