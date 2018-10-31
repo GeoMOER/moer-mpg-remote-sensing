@@ -2,7 +2,9 @@
 title: Remote Sensing in a Nutshell
 ---
 
-This unit refreshes the knowledge on remote sensing focusing on optical sensors and LiDAR examples and sets the ground for the upcoming project work by having a closer look on image preprocessing.
+Refresh your knowledge on remote sensing focusing on optical sensors and LiDAR examples and set the ground for the upcoming project work by having a closer look on image preprocessing.
+
+<!--more-->
 
 ## Learning objectives
 At the end of this unit you should be able to
