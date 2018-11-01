@@ -56,6 +56,6 @@ The last folder will be the one you have checkout from your GitHub-hosted team l
 This is no guideline, this is a rule. Read it, learn it, live it and have a nice ride.  
 {: .notice--danger}
 
-Have a look at [the example on setting up a working environment]({{ site.baseurl }}/unit01/unit01-05_environment_setup).
+Have a look at [the example on setting up a working environment]({{ site.baseurl }}{% link _unit01/unit01-05_environment_setup.md %}).
 {: .notice--info}
 
