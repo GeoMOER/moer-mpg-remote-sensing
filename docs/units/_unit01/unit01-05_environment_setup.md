@@ -10,7 +10,8 @@ Setting up a working or project environment requires the definition of different
 
 For setting up a project environment, one can use a set-up script and the `link2GI` package. 
 
-It is a good idea to name the setup script somethin like `000_setup.R` and source it into every other script of the same project (i.e. include `source(<path-to-git-repository-folder>/src/000_setup.R)`)
+It is a good idea to name the setup script somethin like `000_setup.R` and source it into every other script of the same project, i.e. include `source(path.expand("~/<path-to-git-repository-folder>/src/000_setup.R"))`. 
+
 
 ## Loading the libraries
 The first section of the setup script handles the loading of all required libraries.
@@ -26,17 +27,14 @@ lapply(libs, require, character.only = TRUE)
 
 
 ## Setting up the folder pathes
-The next section of the setup-script handles the definition of folder pathes. One has to define the root directory of the project and all subdirectories (make sure you include the trailing "/"). This information is supplied to the `link2GI::initProj()` function. It returns a list of the folder names and creates the folders if they do not exist, yet. For more information have a look at the manual.
+The next section of the setup-script handles the definition of folder pathes. One has to define the root directory of the project (starting within your home directory) and all subdirectories (make sure you include the trailing "/"). This information is supplied to the `link2GI::initProj()` function. It returns a list of the folder names and creates the folders if they do not exist, yet. For more information have a look at the manual.
 
 
 ```r
 # Set pathes -------------------------------------------------------------------
-# Automatically set root direcory depending on booted system
-if(Sys.info()["sysname"] == "Windows"){
-  filepath_base = "C:/Users/tnauss/permanent/edu/mpg-envinsys-plygrnd"
-} else {
-  filepath_base = "/media/memory/permanent/edu/mpg-envinsys-plygrnd"
-}
+# Automatically set root direcory based on home directory (~)
+filepath_base = path.expand("~/edu/mpg-envinsys-plygrnd/")
+
 
 # Set project specific subfolders
 project_folders = c("data/",                                 # data folders
@@ -57,7 +55,7 @@ print(envrmt$path_data_tmp)
 ```
 
 ```
-## [1] "C:/Users/tnauss/permanent/edu/mpg-envinsys-plygrnd/data/tmp/"
+## [1] "C:/Users/tnauss/Documents/edu/mpg-envinsys-plygrnd//data/tmp/"
 ```
 
 If the `raster` package has been loaded, it is a good choice to set the temp directory to the one of the just defined project environment.
@@ -81,14 +79,3 @@ saga_path = findSAGA()
 # Find OTB installations
 otb_path = findOTB()
 ```
-
-## More information on the link2GI package
-
-<div id="presentation-embed-38909962"></div>
-<script src='https://slideslive.com/embed_presentation.js'></script>
-<script>
-    embed = new SlidesLiveEmbed('presentation-embed-38909962', {
-        presentationId: '38909962',
-        autoPlay: false // change to true to autoplay the embedded presentation
-    });
-</script>

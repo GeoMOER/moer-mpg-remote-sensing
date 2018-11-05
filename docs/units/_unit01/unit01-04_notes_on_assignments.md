@@ -37,11 +37,36 @@ Please do not take any shortcuts here, just do it right and take as much from th
 
 
 ## Mandatory working environment
-We value freedom of choice as an important good but giving our long-term experience freedom of choice comes to an end when we talk about the mandatory working environment for this course. The reason for this is simple: you work with team-based assignments and a piece of code written on the laptop of person A should run basically without any or very minor changes (i.e. a change of the top level directory path where all your scripts, data, results etc. are stored) on the computer of person B. The situation gets more nasty if you should test some code of a peer which is not part of your team or if the instructors would like to run your script on their own system. Hence, let's save everybody's time and focus on the things which are really important. Once the course is finished, feel free to use any working environment structure you like.
+We value freedom of choice as an important good but giving our long-term experience freedom of choice comes to an end when we talk about the mandatory working environment for this course. The reason for this is simple: you work with team-based assignments and a piece of code written on the laptop of person A should run basically without any changes on the computer of person B. The situation gets more nasty if you should test some code of a peer which is not part of your team or if the instructors would like to run your script on their own system. Hence, let's save everybody's time and focus on the things which are really important. Once the course is finished, feel free to use any working environment structure you like.
 
-Your initial working environment should look like the following. It will grow over time based on additional information supplied within the individual assignments. 
+### Coping with different absolute paths across different computers
+The biggest problem when it comes to cross-computer project path environments is not the project environment itself, i.e. the subfolders of your project *relative* to your project folder but the *absolute* path to your project folder. Imagine you agreed on a project folder called mpg-envinsys-plygrnd. On the laptop of person A, the absolute path to the root folder might be C:\Users\UserA\University\mpg-envinsys-plygrnd while on the external hard disk of person B it might be X:\university_courses\mpg-envinsys-plygrnd. If you want to write to your data subfolder you have to change the absolute directory path depending on which computer the script is running. Not good.
+
+One solution to this problem is to agree on a common structure *relative* to your individual R home directory using symbolic links (Linux flavor systems) or junctions (Windows flavor systems).
+{: .notice--success}
+
+Example: Agree with your team mates on a top-level folder name which hosts all of your student projects. For example, this folder is called edu. Within edu, the project folder of this course is called mpg-envinsys-plygrnd. Create the edu anywhere you want, e.g. at D:\stuff\important\edu and create a symbolic link to this folder within your R home directory i.e. the directory where `path.expand("~")` points to.
+
+To create this link on Windows flavor systems, start a command prompt window (e.g. press [Windows], type "CMD", press [Return]) and change the directory of the command prompt window to your R home directory which is C:\Users\your-user-name\Documents by default. Then use the mklink \J command to create the symbolic link. In summary and given the paths above:
+
 ```yaml
-<some-path-to-your-data-disk>\msc-phygeo-envinsys-plygrnd
+cd C:\Users\your-user-name\Documents
+mklink /J edu D:\stuff\important\edu
+```
+
+On Linux flavor systems, the R home directory is your home directory by default, i.e. /home/your-user-name/. If you create your edu folder on /media/memory/interesting/edu, the symbolic link can be created using your bash environment:
+```yaml
+cd /home/<your-user-name>/
+ln -s /media/memory/interesting/edu edu
+```
+
+Now one can access the edu folder on both the windows and the Linux example via the home directory, i.e. ~/edu/. All problems solved.
+
+
+### Mandatory working environment
+Given the explanations above, your initial working environment relative to your edu folder should look like the following. It will grow over time based on additional information supplied within the individual assignments. 
+```yaml
+~edu/mpg-envinsys-plygrnd/
   |-- data
     |-- aerial
     |-- lidar
@@ -49,9 +74,9 @@ Your initial working environment should look like the following. It will grow ov
     |-- tmp
   |-- log
   |-- run
-  |-- <your-github-team-learning-log-repository>
+  |-- your-github-team-learning-log-repository
 ```
-The last folder will be the one you have checkout from your GitHub-hosted team learning log.
+The folder your-github-team-learning-log-repository is the one you have checked out from your GitHub-hosted team learning log.
 
 This is no guideline, this is a rule. Read it, learn it, live it and have a nice ride.  
 {: .notice--danger}
