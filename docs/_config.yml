@@ -150,7 +150,7 @@ defaults:
       path: ""
       type: unit03
     values:
-      category: "Unit 03"
+      category: "03 Project on a Picture is Worth a Thousand Words"
       tags: "Unit|03"
       layout: single
       sidebar:
