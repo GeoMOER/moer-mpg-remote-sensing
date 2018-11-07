@@ -1,7 +1,5 @@
 ---
 title: "Assignments and Working Environment"
-toc: true
-toc_label: In this info
 ---
 
 ## A note on team learning log assignments with GitHub

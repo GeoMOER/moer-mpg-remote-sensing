@@ -1,7 +1,5 @@
 ---
 title: "Unmarked Assignment: Image preprocessing"
-toc: true
-toc_label: In this worksheet
 ---
 
 This worksheet focuses on the preprocessing of the aerial images to compile a comprehensive multi-band GeoTiff which covers the area of interest.

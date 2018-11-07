@@ -1,7 +1,5 @@
 ---
 title: "Unmarked Assignment: Data Collection and Working Environment"
-toc: true
-toc_label: In this worksheet
 ---
 
 This worksheet focuses on getting remote sensing data and its I/O in R.

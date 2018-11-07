@@ -135,6 +135,8 @@ defaults:
       layout: single
       sidebar:
         nav: "units" 
+      toc: true
+      toc_label: On this page
   # unit02
   - scope:
       path: ""
@@ -145,6 +147,8 @@ defaults:
       layout: single
       sidebar:
         nav: "units" 
+      toc: true
+      toc_label: On this page        
   # unit03
   - scope:
       path: ""
@@ -155,6 +159,8 @@ defaults:
       layout: single
       sidebar:
         nav: "units" 
+      toc: true
+      toc_label: On this page        
   # unit04
   - scope:
       path: ""
@@ -165,6 +171,8 @@ defaults:
       layout: single
       sidebar:
         nav: "units" 
+      toc: true
+      toc_label: On this page        
   # unit05
   - scope:
       path: ""
@@ -175,6 +183,8 @@ defaults:
       layout: single
       sidebar:
         nav: "units" 
+      toc: true
+      toc_label: On this page        
   # pages
   - scope:
       path: "_pages"
