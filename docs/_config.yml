@@ -130,7 +130,7 @@ defaults:
       path: ""
       type: unit01
     values:
-      category: "01 Environmental Remote Sensing"
+      category: "Environmental Remote Sensing"
       tags: "Unit|01"
       layout: single
       sidebar:
@@ -142,7 +142,7 @@ defaults:
       path: ""
       type: unit02
     values:
-      category: "02 Remote Sensing in a Nutshell"
+      category: "Remote Sensing in a Nutshell"
       tags: "Unit|02"
       layout: single
       sidebar:
@@ -154,7 +154,7 @@ defaults:
       path: ""
       type: unit03
     values:
-      category: "03 Project on a Picture is Worth a Thousand Words"
+      category: "Project I: A Picture is Worth a Thousand Words"
       tags: "Unit|03"
       layout: single
       sidebar:
@@ -166,7 +166,7 @@ defaults:
       path: ""
       type: unit04
     values:
-      category: "Unit 04"
+      category: "Spotlights"
       tags: "Unit|04"
       layout: single
       sidebar:
