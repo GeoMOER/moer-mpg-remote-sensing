@@ -57,9 +57,11 @@ On Linux flavor systems, the R home directory is your home directory by default,
 cd /home/<your-user-name>/
 ln -s /media/memory/interesting/edu edu
 ```
-
 Now one can access the edu folder on both the windows and the Linux example via the home directory, i.e. ~/edu/. All problems solved.
 
+
+While this will work on all of your private computers, it will not work on the ones in the University's computer lab. To handle that as smooth as possible, you can use the functionality of the envimaR package which allows to set defaults for all computers but one special type which is handled differently. See [the example on setting up a working environment]({{ site.baseurl }}{% link _unit01/unit01-05_environment_setup.md %}).
+{: .notice--info}
 
 ### Mandatory working environment
 Given the explanations above, your initial working environment relative to your edu folder should look like the following. It will grow over time based on additional information supplied within the individual assignments. 

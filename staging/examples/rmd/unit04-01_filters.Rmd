@@ -5,32 +5,31 @@ date: "14 Oktober 2018"
 output: 
   html_document: 
     keep_md: yes
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(fig.path='{{ site.baseurl }}/assets/images/rmd_images/e01-01/')
 library(raster)
+library(rasterVis)
+library(gridExtra)
 ```
 
 
 ```{r, echo=FALSE, results=FALSE, message=FALSE, warning=FALSE}
-par(mfrow=c(2,2))
-
 m = matrix(rep(0,100), 10, 10)
 diag(m) = 1
 
 r = raster(nrows=10, ncols=10, xmn=0, xmx=10, ymn=0, ymx=10)
 r = setValues(r, m)
-plot(r, main = "original raster")
 
 # 3x3 mean filter
 r_mean_3x3 <- focal(r, w=matrix(1/9,nrow=3,ncol=3))
-plot(r_mean_3x3, main = "3x3 mean filter")
 
 # 5x5 mean filter
 r_mean_5x5 <- focal(r, w=matrix(1/25,nrow=5,ncol=5))
-plot(r_mean_5x5, main = "5x5 mean filter")
 
 
 # 3x3 sobel filter
@@ -39,6 +38,22 @@ ky = matrix(c(1,0,-1,2,0,-2,1,0,-1), ncol=3)
 k = (kx**2 + ky**2)**0.5
 
 r_sobel <- focal(r, w=k)
-plot(r_sobel, main = "3x3 sobel filter")
+
+rs = stack(r, r_mean_3x3, r_mean_5x5, r_sobel)
+names(rs) = c("original", "mean filter 3x3", "mean filter 5x5", 
+              "sobel filter 3x3")
+
+breaks <- seq(0, 1, by=0.01)
+cols <- colorRampPalette(c("red", "yellow", "lightgreen"))(length(breaks)-1)
+p1 = levelplot(rs[[1]], at=breaks, col.regions=cols, main = names(rs[[1]]))
+p2 = levelplot(rs[[2]], at=breaks, col.regions=cols, main = names(rs[[2]]))
+p3 = levelplot(rs[[3]], at=breaks, col.regions=cols, main = names(rs[[3]]))
+p4 = levelplot(rs[[4]], col.regions=cols, main = names(rs[[4]]))
+
+grid.arrange(p1, p2, p3, p4, ncol=2, nrow=2)
+plot(p1)
+plot(p2)
+plot(p3)
+plot(p4)
 ```
 

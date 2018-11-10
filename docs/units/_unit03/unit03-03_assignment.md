@@ -1,5 +1,5 @@
 ---
-title: "Marked Assignment: Project"
+title: "Marked Assignment: Project I - Comprehensive Image Collection"
 ---
 
 This worksheet introduces your first project which aims in the compilation of a comprehensive dataset for further analysis in this and the parallel [Geo Information Systems (GIS)](https://oer.uni-marburg.de/goto.php?target=crs_327&client_id=mriliasmooc){:target="_blank"} course.

@@ -9,6 +9,10 @@ Artificial images result from mathematical operations on image data. The operati
 ## Artifical image computations
 Artificial images can be used to highlight certain aspects of the spectral information recorded in the original dataset or its horizontal pattern. To compute artificial images, new values have to be calculated for each pixel in the original datasets (original data can be the initially recorded data or any other artificial image which has already been computed). For an extreme example on the utilization of artificial images see e.g. [Meyer et al. 2017](https://www.tandfonline.com/doi/abs/10.1080/2150704X.2017.1312026){:target="_blank"} who uses over 300 artificial images to estimate their usability in satellite rainfall retrievals.
 
+A list of (minimum) available indices can be found in the [Index Data Base](https://www.indexdatabase.de/db/i.php){:target="_blank"} of Verena Henrich and Katharina Brüser at Bonn University.
+{: .notice--info}
+
+
 ### Pixel-wise computation
 If the  computation is pixel-wise, only those original pixel values are included in the computation at a time which are located at the same position as the respective target pixel. Examples for this type of computation are any kind of spectral index values like the Normalized Different Vegetation Index (NDVI, see [this NASA page](https://earthobservatory.nasa.gov/Features/MeasuringVegetation/measuring_vegetation_2.php){:target="_blank"}). A principal component analysis, also based on the entire dataset, can also be regarded as pixel-wise since the final value of e.g. the first principal component at a specific pixel location results from the transformation of the original pixel values at this position. 
 
@@ -19,7 +23,16 @@ If the computation includes neighboring pixels, the value of the respective targ
 
 The following gallery shows three examples of spatial filters.
 
-![]({{ site.baseurl }}/assets/images/rmd_images/e01-01/unnamed-chunk-1-1.png)
+{% include gallery_collection gallery_path = "images/filters" caption = "Examples of focal computations." %}
+
+The sobel filter is computed using the following matrix supplied to the raster::focal function.
+```r
+kx = matrix(c(-1,-2,-1,0,0,0,1,2,1), ncol=3)
+ky = matrix(c(1,0,-1,2,0,-2,1,0,-1), ncol=3)
+k = (kx**2 + ky**2)**0.5
+
+sobel_raster <- focal(original_raster, w=k)
+```
 
 ### Morphological feature computation
 A second spatial method aims in computing morphological features based on individual raster values. A typical data source is a digital elevation model and typical target datasets are rasters showing the slope, exposition etc. of the surface.
