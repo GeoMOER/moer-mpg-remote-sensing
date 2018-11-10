@@ -168,6 +168,6 @@ lchmr = raster(file.path(envrmt$path_grids, "chm_0050.tif"))
 ```
 
 ```{r eval=TRUE, message=FALSE, warning=FALSE}
-mapshot(mapview(lchmr), url = "lidar_dhm_map.html")
+mapshot(mapview(lchmr, legend=TRUE, layer.name = "Surface height model"), url = "lidar_dhm_map.html")
 ```
 
