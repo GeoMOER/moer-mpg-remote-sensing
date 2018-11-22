@@ -4,9 +4,9 @@ title: "Spotlight: LiDAR"
 
 
 
-LiDAR observations are point clouds representing the returns of laser pulses reflected from objects, e.g. a tree canopy.
+LiDAR observations are point clouds representing the returns of laser pulses reflected from objects, e.g. a tree canopy. Processing LiDAR (or optical point cloud) data generally  requires more computational resources than 2D optical observations. Therefore, tile based processing is a key element at least for preprocessing.
 
-Processing LiDAR (or optical point cloud) data generally  requires more computational resources than 2D optical observations. Therefore, tile based processing is a key element at least for preprocessing.
+<!--more-->
 
 For this example, the lidR package will be used. Extensive documentation and workflow examples can be found in the Wiki of the respective [GitHub repository](https://github.com/Jean-Romain/lidR). Other software options include e.g. [GRASS GIS](https://grass.osgeo.org/screenshots/lidar/) or [ArcGIS](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/las-dataset/a-quick-tour-of-lidar-in-arcgis.htm).
 
