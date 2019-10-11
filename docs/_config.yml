@@ -166,7 +166,7 @@ defaults:
       path: ""
       type: unit04
     values:
-      category: "Spotlights"
+      category: "Project II: A Map is Worth a Thousand Pictures"
       tags: "Unit|04"
       layout: single
       sidebar:
@@ -178,7 +178,7 @@ defaults:
       path: ""
       type: unit05
     values:
-      category: "Unit 05"
+      category: "Spotlights"
       tags: "Unit|05"
       layout: single
       sidebar:
