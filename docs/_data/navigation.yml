@@ -7,7 +7,7 @@ main:
   - title: "Course home"
     url: /index.html
   - title: "OER home"
-    url: https://oer.uni-marburg.de/goto.php?target=crs_340&client_id=mriliasmooc
+    url: https://ilias.uni-marburg.de/goto.php?target=crs_1656014&client_id=UNIMR
   - title: "Sitemap"
     url: /sitemap.html
     
@@ -20,4 +20,4 @@ docs:
       - title: "Course home"
         url: /index.html
       - title: "OER home"
-        url: https://oer.uni-marburg.de/goto.php?target=crs_340&client_id=mriliasmooc
+        url: https://ilias.uni-marburg.de/goto.php?target=crs_1656014&client_id=UNIMR
