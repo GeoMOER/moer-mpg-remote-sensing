@@ -21,9 +21,9 @@ feature_row_ilos:
 
 {% include feature_row id="feature_row_intro" type="center" %}
 
-Field surveys generally face the compromise between their level of detail, their extend and their temporal repetition. One can either study selected processes in detail on a very limited number of observation sites or focus on a more landscape oriented survey using more generalized observations. The restrictions can be loosened by linking survey information to area wide remote sensing observations and the modelling of raster maps which can further be used for scientific analysis. 
+Field surveys face the compromise between their level of detail, their extend and their temporal repetition. One can study selected processes in detail on a very limited number of observation sites or focus on a more landscape oriented survey using generalized observations. The restrictions loosen when linking survey information to area wide remote sensing observations and the modelling of raster maps as basis for scientific analysis. 
 
-Remote sensing has a history of more than 150 years and is a well established, cost-effective and powerful tool but it has to be applied with caution in order to gain robust results. The advent of high performance computing along with machine learning algorithms has just opened up a new chapter in data mining and information retrieval using a wide variety of ground-based, airborne and satellite sensors. This requires a large variety of skills related to data handling, machine learning, team-based software development and workflow documentation and the presentation and discussion of results.
+Remote sensing has a history of more than 150 years. It is well established, cost-effective and powerful but must be applied with caution to gain robust results. The advent of artificial intelligence has opened a new chapter in data mining and information retrieval. Profound skills in data handling, machine learning, team-based software development, workflow documentation and presentation and discussion of result are required.
 
 # Intended learning outcomes
 At the end of this course you should be able
@@ -38,7 +38,7 @@ At the end of this course you should be able
 
 # Course features
 
-The course is linked to the research of the Nature 4.0 project, heavily integrated into the parallel [Geo Information Systems](https://oer.uni-marburg.de/goto.php?target=crs_327&client_id=mriliasmooc){:target="_blank"} and build upon the parallel [Data Analysis](https://oer.uni-marburg.de/goto.php?target=crs_326&client_id=mriliasmooc){:target="_blank"} courses. It is intended as a blended learning module in our study program although the provided introductions, explanations and examples might be useful for self-study, too.
+The course is linked to research in the LOEWE Priority Programm Nature 4.0, heavily integrated into the parallel [Geo Information Systems](https://ilias.uni-marburg.de/data/UNIMR/lm_data/lm_2092236/index.html){:target="_blank"} and build upon the parallel [Data Analysis](https://ilias.uni-marburg.de/data/UNIMR/lm_data/lm_2287352/index.html){:target="_blank"} courses. It is intended as a blended learning module in our study program although the provided introductions, explanations and examples might be useful for self-study, too.
 
 
 
@@ -68,7 +68,7 @@ The course is linked to the research of the Nature 4.0 project, heavily integrat
 
 # Deliverables
 
-The graded course certificate will be based on a team portfolio hosted as a team repository on GitHub. The individual portfolio items are defined in the respective course assignments along with the information if they will be marked or not. Marked portfolio items encompass the presentation and peer-review of two posters which inform about the results of two problem solving assignments related to the computation and analysis of remote sensing products.
+The graded course certificate will be based on a portfolio. The individual portfolio items are defined in the course assignments along with information if they will be marked or not. The marked portfolio item will be an article following the type "Practical Tools" (but up to 2,000 words) of Methods in Ecology and Evolution.
 
 
 # Preparation and prerequisites
