@@ -1,5 +1,5 @@
 ---
-title: "Project II: A Map is Worth a Thousand Pictures"
+title: "Project 2: A Map is Worth a Thousand Pictures"
 ---
 
 Design a second project aiming in the computation of a tree species map for the Marburg Open Forest area.

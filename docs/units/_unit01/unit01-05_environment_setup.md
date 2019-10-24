@@ -6,7 +6,7 @@ toc_label: In this example
 
 
 
-Setting up a working or project environment requires the definition of different folder pathes and the loading of necessary R packages and additional functions. If additional software like GIS should also be accessible, respective binaries and software environments must be linked, too.
+Setting up a working or project environment requires the definition of different folder paths and the loading of necessary R packages and additional functions. If additional software like GIS should also be accessible, respective binaries and software environments must be linked, too.
 
 For setting up a project environment, one can use a set-up script and the
 envimaR and link2GI packages. 
@@ -27,14 +27,13 @@ other place on your storage devices. 1
 
 ## Special considerations at our computer labs
 The R home directory on the computers in the labs at Marburg University points to
-the network drive `H:/Documents`. For other but unkown reasons, you could not use
-this drive for symlinks (the links work, but they get in conflict with storage
-space restrictions). Therefore, you have to define an alternative starting point
+the network drive `H:/Documents`. For storage space reasons, you could not use
+this drive for symlinks. Therefore, you have to define an alternative starting point
 for your project folders to work with.
 
 To handle your project relative on all computers using something beneath your 
 home directory `~` as a starting point except on one type of computer (i.e. the
-ones in the University computer labs), we reccomend to use the functionality of
+ones in the University computer labs), we recommend to use the functionality of
 the envimaR package.
 
 
@@ -53,7 +52,7 @@ devtools::install_github("envima/envimaR")
 
 
 ### Template for sourcing the setup script
-To source the setup script you should reference its location in the same manner 
+To source the setup script, you should reference its location in the same manner 
 as any other folder/file. Therefore, include something like this into the header
 of your control or analysis scripts.
 
@@ -90,7 +89,7 @@ envrmt = createEnvi(root_folder = "~/edu/mpg-envinsys-plygrnd",
                     alt_env_id = "COMPUTERNAME", alt_env_value = "PCRZP",
                     alt_env_root_folder = "F:\\BEN\\edu")
 ```
-One can now access the respecive sufolders using the list entries of the variable `envrmt`. The entries are named according to the subfolder names with the prefix "path_".
+One can now access the respective subfolders using the list entries of the variable `envrmt`. The entries are named according to the subfolder names with the prefix "path_".
 
 ```r
 print(envrmt$path_data_mof)

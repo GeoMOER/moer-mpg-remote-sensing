@@ -1,5 +1,5 @@
 ---
-title: "Project I: A Picture is Worth a Thousand Words"
+title: "Project 1: A Picture is Worth a Thousand Words"
 ---
 
 Design a project aiming in the computation of a comprehensive image collection for tree delineation, species prediction, and heterogeneity mapping.

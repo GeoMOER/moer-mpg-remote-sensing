@@ -155,7 +155,7 @@ defaults:
       path: ""
       type: unit03
     values:
-      category: "Project I: A Picture is Worth a Thousand Words"
+      category: "Project 1: A Picture is Worth a Thousand Words"
       tags: "Unit|03"
       layout: single
       sidebar:
@@ -167,13 +167,13 @@ defaults:
       path: ""
       type: unit04
     values:
-      category: "Project II: A Map is Worth a Thousand Pictures"
+      category: "Project 2: A Map is Worth a Thousand Pictures"
       tags: "Unit|04"
       layout: single
       sidebar:
         nav: "units" 
       toc: true
-      toc_label: On this page        
+      toc_label: On this page     
   # unit05
   - scope:
       path: ""
@@ -185,7 +185,7 @@ defaults:
       sidebar:
         nav: "units" 
       toc: true
-      toc_label: On this page        
+      toc_label: On this page     
   # pages
   - scope:
       path: "_pages"

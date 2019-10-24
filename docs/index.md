@@ -21,9 +21,9 @@ feature_row_ilos:
 
 {% include feature_row id="feature_row_intro" type="center" %}
 
-Field surveys face the compromise between their level of detail, their extend and their temporal repetition. One can study selected processes in detail on a very limited number of observation sites or focus on a more landscape oriented survey using generalized observations. The restrictions loosen when linking survey information to area wide remote sensing observations and the modelling of raster maps as basis for scientific analysis. 
+Field surveys face the compromise between level of detail, extend and temporal repetition. One can study selected processes in detail on a very limited number of observation sites or focus on a landscape survey using generalized observations. The restrictions loosen when linking survey information to area wide remote sensing observations and the modelling of raster maps as basis for scientific analysis. 
 
-Remote sensing has a history of more than 150 years. It is well established, cost-effective and powerful but must be applied with caution to gain robust results. The advent of artificial intelligence has opened a new chapter in data mining and information retrieval. Profound skills in data handling, machine learning, team-based software development, workflow documentation and presentation and discussion of result are required.
+Remote sensing has a history of more than 150 years. It is well established and cost-effective but must be applied with caution to gain robust results. The advent of artificial intelligence has opened a new chapter in data mining and information retrieval. Profound skills in data handling, machine learning, team-based software development, workflow documentation and presentation and discussion of result are required.
 
 # Intended learning outcomes
 At the end of this course you should be able
@@ -38,7 +38,7 @@ At the end of this course you should be able
 
 # Course features
 
-The course is linked to research in the LOEWE Priority Programm Nature 4.0, heavily integrated into the parallel [Geo Information Systems](https://ilias.uni-marburg.de/data/UNIMR/lm_data/lm_2092236/index.html){:target="_blank"} and build upon the parallel [Data Analysis](https://ilias.uni-marburg.de/data/UNIMR/lm_data/lm_2287352/index.html){:target="_blank"} courses. It is intended as a blended learning module in our study program although the provided introductions, explanations and examples might be useful for self-study, too.
+The course is linked to the parallel [Geo Information Systems](https://ilias.uni-marburg.de/goto.php?target=crs_1656074&client_id=UNIMR){:target="_blank"} and build upon the parallel [Data Analysis](https://ilias.uni-marburg.de/goto.php?target=crs_1655946&client_id=UNIMR){:target="_blank"} courses. It is intended as a blended learning module in our study program although the provided introductions, explanations and examples might be useful for self-study, too. Data and examples in this course focus on Marburg Open Forest - the open research and learning forest of Marburg University - and are related to the LOEWE Priority Programm [Nature 4.0](https://www.uni-marburg.de/de/fb19/natur40){:target="_blank"}.
 
 
 
@@ -53,15 +53,15 @@ The course is linked to research in the LOEWE Priority Programm Nature 4.0, heav
 | 3 | Problem: Comprehensive image collection for tree delineation, species prediction, and heterogeneity mapping | Decompose the problem, identify research tasks and sketch a project worklfow |
 | 4 | Spotlight: LiDAR data processing | Dealing with storage expensive LiDAR data | 
 | 5 | Spotlight: Artificial images | Calculation of artificial images | 
-| 6 | Compilation of area wide dataset | Transfer data to parallel GIS course project | 
-| 7 | Communicating remote sensing research | Preparation for poster presentation |
-| 8 | Project 1 presentation | Present your project results to your peers |
+| 6 | Spotlight: Communicating research | Preparation for writing a short article |
+| 7 | Compilation of area wide dataset | Transfer data to parallel GIS course project | 
+| 8 | Project 1 deadline | Provide your preliminary project results in the form of introduction and method chapters to your peers |
 | 9 | Peer feedback on project presentation | Evaluate the work of your peers, reflect your own workflow and discuss potential improvements |
 || **Project 2: Seeing the tree species for the wood** | Machine-learning-based prediction of species |
 | 10 | Problem: Predict tree species in space | Decompose the problem, identify research tasks and sketch a project worklfow |
 | 11 | Spotlight: Land cover prediction and machine learning models | Deal with machine learning models and error estimation strategies for spatial data |
 | 12 | Continue your project ||
-| 13 | Project 2 presentation | Present your project results to your peers |
+| 13 | Project 2 deadline | Provide your project results as final article to your peers |
 || **Wrap up** ||
 | 14 | Feedback and goodbye | Get feedback from your peers and instructors, tell us how you self-assess your skills and happy holidays |
 
@@ -73,7 +73,7 @@ The graded course certificate will be based on a portfolio. The individual portf
 
 # Preparation and prerequisites
 
-The courses assumes basic knowledge and skills in remote sensing and GIS. Required R and GIS skills can be developed by the parallel courses [Data Analysis](https://oer.uni-marburg.de/goto.php?target=crs_326&client_id=mriliasmooc){:target="_blank"} and [Geo Information Systems](https://oer.uni-marburg.de/goto.php?target=crs_327&client_id=mriliasmooc){:target="_blank"}.
+The courses assumes basic knowledge and skills in remote sensing and GIS. Required R and GIS skills can be developed by the parallel courses [Data Analysis](https://ilias.uni-marburg.de/goto.php?target=crs_1655946&client_id=UNIMR){:target="_blank"} and [Geo Information Systems](https://ilias.uni-marburg.de/goto.php?target=crs_1656074&client_id=UNIMR){:target="_blank"}.
 
 
 

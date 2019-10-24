@@ -19,4 +19,4 @@ If you are particularly interested in remote sensing of biodiversity, this site 
 [Remote Sensing Biodiversity](http://remote-sensing-biodiversity.org/){:target="_blank"}
 
 ## Integrating research and education
-The philosophy of this course interlinks real world science with the Master education program. Hence, the problems you will solve during this course are real world problems and the solutions you will provide might make an actual contribution to ongoing research activities. This is why the next section will introduce you to the Nature 4.0 project on sensing biodiversity.
+The philosophy of this course interlinks real world science with the education program. The problems you will solve during this course are real world problems and the solutions you will provide might make an actual contribution to ongoing research activities. The next section will introduce you to the Nature 4.0 project on sensing biodiversity.

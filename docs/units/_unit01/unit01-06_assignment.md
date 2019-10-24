@@ -13,7 +13,7 @@ After completing this worksheet, you should have a structured working environmen
   * Remote sensing data provided by the course instructors.
 
 ## Remote sensing data I/O
-Please create the working environment for this course following the mandatory settings provided by the [info on assignments]({{ site.baseurl }}/unit01/unit01-04_notes_on_assignments#mandatory-working-environment).
+Please create the working environment for this course following the mandatory settings provided by the [notes on assignments]({{ site.baseurl }}/unit01/unit01-04_notes_on_assignments#mandatory-working-environment).
 
 Download the aerial images required for this course using the link provided by the course instructors. 
 
