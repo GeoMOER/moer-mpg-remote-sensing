@@ -10,7 +10,7 @@ Design a project aiming in the computation of a comprehensive image collection f
 
 ## Learning objectives
 At the end of your project you should be able to
-* process optical and LiDAR data to compile a comprehensive dataset for your area of interest,
+* process optical data to compile a comprehensive dataset for your area of interest,
 * compute artificial images which highlight spectral, structural or spatial properties,
 * design and implement medium complex workflows related to artificial image computations,
 * work in teams on short-term projects and use collaborative project and software development tools,
