@@ -8,12 +8,12 @@ The appropriate collection of training data is essential for all monitored class
 
 ## From arbitrary dimensioned Field data to Spatial continous Predictions
 
-{% include figure image_path="/assets/images/researcharea.png" alt="Illustration of the MOF research area." %}
+{% include figure image_path="/assets/images/researcharea.jpg" alt="Illustration of the MOF research area." %}
 
 
 ## Land Cover Classification
 
-{% include figure image_path="/assets/images/MOF_trainings_concept.png" alt="Illustration of a spatial training data sampling concept." %}
+{% include figure image_path="/assets/images/MOF_trainings_concept.jpg" alt="Illustration of a spatial training data sampling concept." %}
 
 
 Please note that especially the spatial validation concepts is a cutting edge theme for spatial prediction of data. The following talks will give you a brief introduction
