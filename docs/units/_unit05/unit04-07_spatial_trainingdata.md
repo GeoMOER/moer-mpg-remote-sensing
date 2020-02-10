@@ -1,5 +1,5 @@
 ---
-title: "Spotlight: Spatial variable selection "
+title: "Spotlight: Spatial variable selection and prediction "
 toc: true
 toc_label: In this example
 ---
@@ -30,8 +30,9 @@ Please note that especially the spatial validation concepts is a cutting edge th
 ## Reference
 [Importance of spatial predictor variable selection in machine learning applications -Moving from data reproduction to spatial prediction](https://www.researchgate.net/publication/335819474_Importance_of_spatial_predictor_variable_selection_in_machine_learning_applications_-Moving_from_data_reproduction_to_spatial_prediction){:target="_blank"}
 
-## Control Script
+## Typical Control Script for RGB based classification
 
+The following example script shows a typical implemetation fpr calculating the predictor stack from an arbitrary RGB image, a cery fast extraction of the training data based on the `velox` package and setting up a common non spatial random forest prediction im comaprson to a forward feature selection with a spatial cross validitation. As you may note the predicted classes are not massively differing however the statistical performance measures are declining rapidly.
 ```r
 #------------------------------------------------------------------------------
 # Type: control script 
@@ -173,12 +174,12 @@ model <- train(trainDat[,predictors],
                importance=TRUE,
                ntree=75)
 stopCluster(cl)
-
+saveRDS(model,file = file.path(envrmt$path_data,"model.RDS" ))
 # validation of the model
 # get all cross-validated predictions:
 cvPredictions <- model$pred[model$pred$mtry==model$bestTune$mtry,]
 # calculate Kappa etc:
-confusionMatrix(cvPredictions$pred,cvPredictions$obs)$overall
+k_m<-round(confusionMatrix(cvPredictions$pred,cvPredictions$obs)$overall[2],digits = 3)
 # var importance
 plot(varImp(model),plotType="selected")
 
@@ -214,7 +215,7 @@ ffsmodel_spatial <- ffs(trainDat[,predictors],
                         trControl = ctrl_sp,
                         ntree=75)
 stopCluster(cl)
-
+saveRDS(ffsmodel_spatial,file = file.path(envrmt$path_data,"ffsmodel_spatial.RDS" ))
 # plotting the results of the variable selection 
 plot_ffs(ffsmodel_spatial)
 plot_ffs(ffsmodel_spatial, plotType="selected")
@@ -223,13 +224,113 @@ plot(varImp(ffsmodel_spatial))
 
 # validation of the model
 # get all cross-validated predictions and calculate kappa
-cvPredictions <- ffsmodel_spatial$pred[ffsmodel_spatial$pred$mtry==ffsmodel_spatial$bestTune$mtry,]
-confusionMatrix(cvPredictions$pred,cvPredictions$obs)$overall
+cvPredictions2 <- ffsmodel_spatial$pred[ffsmodel_spatial$pred$mtry==ffsmodel_spatial$bestTune$mtry,]
+k_ffs<-round(confusionMatrix(cvPredictions2$pred,cvPredictions2$obs)$overall[2],digits = 3)
 
 # make ffs model based prediction
 prediction_ffs <- predict(predStack,ffsmodel_spatial)
 
 # plot it
-spplot(prediction_ffs,col.regions=as.character(cols_df$col))+spplot(prediction,col.regions=as.character(cols_df$col))
+diff<- prediction- prediction_ffs
+zn<-raster::stack(prediction,prediction_ffs)
+names(zn)<- c("common_cv","spatial_cv_ffs")
+spplot(zn,col.regions=as.character(cols_df$col),main= paste("rf prediction: common_cv, ",k_m, " spatial_cv_ffs, ",k_ffs ))
+ffsmodel_spatial$selectedvars
+model$results
+
+
+```
+## Some Aspects of reducing predictors
+
+The use of the Forward Feature Selection (ffs) and the leave one out spatial cross validation are extremely time consuming. The reason is the brute force combination of all predictor variables with each other. It is therefore helpful to reduce the number of predictor variables to an appropriate level. But what does appropriate mean? In principle, an RGB image has three generically or artificially split information in the spectral ranges red, green and blue. All derivatives, be they principal components, visible indicies, statistical values, Haralick etc. are more or less linearly correlated with these channels. 
+Therefore it seems to make sense to eliminate highly linear correlated derivatives as well as near zero values and raster layers containing incomplete data. 
+
+The following script shows a possibility to underscore the training data regarding their correlation and other limitations. 
+
+Translated with www.DeepL.com/Translator (free version)
+
+```r
+# script trys to reduce redundant data due to correlation, NANs and near zero
+Variables
+library(corrplot)
+library(PerformanceAnalytics)
+library(caret)
+
+# function to wrap original corrplot::cor.mtest for keeping names and structure
+# Significance test which produces p-values and confidence intervals for each
+pair of input features.
+# do not know where I got this first...
+cor.mtest < - function(mat, ...) {
+  mat < - as.matrix(mat)
+  n < - ncol(mat)
+  p.mat< - matrix(NA, n, n)
+  diag(p.mat) < - 0
+  for (i in 1:(n - 1)) {
+    for (j in (i + 1):n) {
+      tmp < - cor.test(mat[, i], mat[, j], ...)
+      p.mat[i, j] < - p.mat[j, i] < - tmp$p.value
+    }
+  }
+  colnames(p.mat) < - rownames(p.mat) < - colnames(mat)
+  p.mat
+}
+
+
+# take the dataframe of raw trainingddata as derived from the rasterstack
+trDF < - trainDF
+# check names
+names(trDF)
+# and drop IDs or whatever is necessary in this example it is just id
+drops < - c("id")
+trDF< -trDF[ , !(names(trDF) %in% drops)]
+# then check on complete cases
+clean_trDF< -tr[complete.cases(trDF), ]
+
+# now you may check on Zero- and Near Zero-Variance Predictors
+# have a look at
+#
+https://topepo.github.io/caret/pre-processing.html#zero--and-near-zero-variance-predictors
+# first have a look on the results
+nearZeroVar(clean_trDF, saveMetrics= TRUE)
+
+# removing descriptors with absolute correlations above 0.75
+# have a look at
+#
+https://topepo.github.io/caret/pre-processing.html#identifying-correlated-predictors
+corclean_trDF < -  cor(clean_trDF)
+highCorr < - sum(abs(corclean_trDF[upper.tri(corclean_trDF)]) > .999)
+summary(corclean_trDF[upper.tri(descrCor)])
+
+highlyCorDescr < - findCorrelation(corclean_trDF, cutoff = .75)
+filtered_trainDF < - as.data.frame(corclean_trDF[,-highlyCorDescr])
+
+# check correlations
+descrCor2 < - cor(filtered_trainDF)
+
+
+# now perform the Significance test 
+p.mat< - cor.mtest(filtered_trainDF,na.action="na.omit")
+
+# and plot with differnt styles
+#
+http://www.sthda.com/english/wiki/visualize-correlation-matrix-using-correlogram
+
+corrplot(descrCor2, type="upper", order="hclust", p.mat = p.mat, sig.level =
+0.05,tl.col="black")
+corrplot(descrCor2, method="circle")
+corrplot(descrCor2, add=TRUE, type="lower", method="number",order="AOE",
+diag=FALSE, tl.pos="n", cl.pos="n")
+
+# NOTE; We have reduced the predictor stack by about half checking on 
+# complete cases and highly corelated data
+# we still could reduce the remaining stack by non signifkant variables and so
+on
+# actually up top here we are not loosing information but speeding up the
+training signifcantly
+
+names(trDF)
+names(filtered_trainDF)
+
+
 
 ```
