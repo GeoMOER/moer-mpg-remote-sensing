@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Sitemap"
+title: "Seitenübersicht"
 author_profile: false
 permalink: /sitemap.html
 sidebar: false

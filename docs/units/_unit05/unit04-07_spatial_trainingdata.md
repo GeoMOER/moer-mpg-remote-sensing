@@ -247,7 +247,6 @@ Therefore it seems to make sense to eliminate highly linear correlated derivativ
 
 The following script shows a possibility to underscore the training data regarding their correlation and other limitations. 
 
-Translated with www.DeepL.com/Translator (free version)
 
 ```r
 # script trys to reduce redundant data due to correlation, NANs and near zero

@@ -1,0 +1,43 @@
+
+# /_data/authors.yml
+
+- ammoneit:
+  name             : "Rieke Ammoneit"
+  avatar           : "/assets/images/ammoneit.jpg"
+  email            : "ui-lehre@geo.uni-marburg.de"
+  home             : "https://www.uni-marburg.de/de/fb19/disciplines/physisch/umweltinformatik/umweltinformatik"
+- dippel:
+  name             : "Kevin Dippell"
+  avatar           : "/assets/images/dippell.jpg"
+  email            : "ui-lehre@geo.uni-marburg.de"
+  home             : "https://www.uni-marburg.de/de/fb19/disciplines/physisch/umweltinformatik/umweltinformatik"
+- beckmann:
+  name             : "Jonas Beckmann"
+  avatar           : "/assets/images/beckmann.jpg"
+  email            : "ui-lehre@geo.uni-marburg.de"
+  home             : "https://www.uni-marburg.de/de/fb19/disciplines/physisch/umweltinformatik/umweltinformatik"
+- langenohl:
+  name             : "David Langenohl"
+  avatar           : "/assets/images/langenohl.jpg"
+  email            : "ui-lehre@geo.uni-marburg.de"
+  home             : "https://www.uni-marburg.de/de/fb19/disciplines/physisch/umweltinformatik/umweltinformatik"
+- nauss:
+  name             : "Thomas Nauss"
+  avatar           : "/assets/images/nauss.jpg"
+  email            : "ui-lehre@geo.uni-marburg.de"
+  home             : "https://www.uni-marburg.de/de/fb19/disciplines/physisch/umweltinformatik/umweltinformatik"
+- peter:
+  name             : "Carina Peter"
+  avatar           : "/assets/images/peter.jpg"
+  email            : "ui-lehre@geo.uni-marburg.de"
+  home             : "https://www.uni-marburg.de/de/fb19/disciplines/physisch/umweltinformatik/umweltinformatik"
+- reudenbach:
+  name             : "Chris Reudenbach"
+  avatar           : "/assets/images/reudenbach.jpg"
+  email            : "ui-lehre@geo.uni-marburg.de"
+  home             : "https://www.uni-marburg.de/de/fb19/disciplines/physisch/umweltinformatik/umweltinformatik"
+- ziegler:
+  name             : "Alice Ziegler"
+  avatar           : "/assets/images/ziegler.jpg"
+  email            : "ui-lehre@geo.uni-marburg.de"
+  home             : "https://www.uni-marburg.de/de/fb19/disciplines/physisch/umweltinformatik/umweltinformatik"
