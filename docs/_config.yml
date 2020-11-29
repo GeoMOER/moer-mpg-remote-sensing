@@ -40,36 +40,16 @@ twitter:
 
 ##### Lecturer settings #######################################################
 author:
-  name             : "Thomas Nauss, Chris Reudenbach"
-  avatar           : "/assets/images/tnauss.jpg"
+  name             : "Christoph Reudenbach"
+  avatar           : "/assets/images/creudenbach.jpg"
   bio              : "Marburg University"
   location         : "Marburg, DE"
-  email            : "reudenbach@uni-marburg.de"
-  uri              : "https://www.uni-marburg.de/fb19/fachgebiete/umweltinformatik/"
-  home             : "https://www.uni-marburg.de/de/fb19/fachbereich/staff/dr-christoph-reudenbauch"
-  bitbucket        :
-  codepen          :
-  dribbble         :
+  email            : "reudenbach@geo.uni-marburg.de"
+  home             : "https://gis-ma.org"
   flickr           : "https://www.flickr.com/environmentalinformatics-marburg/"
-  facebook         : "https://www.facebook.com/GeographieMarburg/"
-  foursquare       :
   github           : "GeoMOER"
-  gitlab           :
-  google_plus      :
-  keybase          :
-  instagram        : 
-  lastfm           :
-  linkedin         :
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : 
-  steam            :
-  tumblr           :
-  twitter          : "https://twitter.com/geographie_umr"
-  vine             :
-  weibo            :
-  xing             :
   youtube          : "https://www.youtube.com/channel/UCGiwSv5KYjsNXl6-nZq0SDA"
+
 
 
 ##### Site configuration ######################################################
@@ -155,25 +135,22 @@ defaults:
       path: ""
       type: unit03
     values:
-      category: "Project 1: A Picture is Worth a Thousand Words"
+      category: "Assignments"
       tags: "Unit|03"
       layout: single
       sidebar:
         nav: "units" 
       toc: true
-      toc_label: On this page        
-  # unit04
+      toc_label: On this page      
   - scope:
       path: ""
-      type: unit04
+      type: unit03
     values:
-      category: "Project 2: A Map is Worth a Thousand Pictures"
+      category: "Material and References"
       tags: "Unit|04"
       layout: single
       sidebar:
-        nav: "units" 
-      toc: true
-      toc_label: On this page     
+        nav: "units"       
   # unit05
   - scope:
       path: ""
