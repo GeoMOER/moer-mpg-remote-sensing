@@ -20,3 +20,10 @@ At the end of your project you should be able to
 * understand the importance of appropriate training site selection strategies,
 * discuss strategies on which predictor variables to include in a classification model,
 * communicate your work in a poster presentation.
+
+## Building a comprehensive remote sensing dataset
+Please compile a comprehensive dataset based on spectral and structural information derived from both multi-channel aerial and LiDAR datasets which is suitable for the parallel and upcoming project work mentioned above. The dataset should provide information on
+* spectral properties
+* structural properties
+* spatial patterns of spectral and structural properties
+* tree species classification for Marburg Open Forest
