@@ -27,7 +27,7 @@ Remote sensing has a history of more than 150 years. It is well established and 
 
 #  Geo Information Science Basics
 
-The basic information and general introduction to the conception of this and the parallel [Remote Sensing Course](https://geomoer.github.io//moer-mpg-remote-sensing/) are available at [Geo Information Science Basics](https://geomoer.github.io//moer-mpg-rsgi-basics/). 
+The basic information and general introduction to the conception of this and the parallel [GIS Course](https://geomoer.github.io//moer-mpg-gis/) are available at [Geo Information Science Basics](https://geomoer.github.io//moer-mpg-rsgi-basics/). 
 
 They are an integral and binding part of this course.
 {: .notice--danger}
