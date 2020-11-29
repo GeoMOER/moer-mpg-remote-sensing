@@ -25,6 +25,14 @@ Field surveys face the compromise between level of detail, extend and temporal r
 
 Remote sensing has a history of more than 150 years. It is well established and cost-effective but must be applied with caution to gain robust results. The advent of artificial intelligence has opened a new chapter in data mining and information retrieval. Profound skills in data handling, machine learning, team-based software development, workflow documentation and presentation and discussion of result are required.
 
+#  Geo Information Science Basics
+
+The basic information and general introduction to the conception of this and the parallel [Remote Sensing Course](https://geomoer.github.io//moer-mpg-remote-sensing/) are available at [Geo Information Science Basics](https://geomoer.github.io//moer-mpg-rsgi-basics/). 
+
+They are an integral and binding part of this course.
+{: .notice--danger}
+
+
 # Intended learning outcomes
 At the end of this course you should be able
 
