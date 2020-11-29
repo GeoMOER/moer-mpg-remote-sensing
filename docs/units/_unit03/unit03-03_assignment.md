@@ -3,16 +3,6 @@ title: "Assignments"
 ---
 
 
-More information on the tree crown assignment and the forest structure project will be supplied in the parallel GIS course. To get an idea on the remote sensing based species prediction or spatial prediction project in general, the publication of [Ludwig et al. 2016](https://www.sciencedirect.com/science/article/pii/S0303243416300265){:target="_blank"} on detecting woody vegetation in South Africa can be one starting point (by the way, this publication is the result of the B.Sc. thesis of Annika).
-
-## Building a comprehensive remote sensing dataset
-Please compile a comprehensive dataset based on spectral and structural information derived from both multi-channel aerial and LiDAR datasets which is suitable for the parallel and upcoming project work mentioned above. The dataset should provide information on
-* spectral properties
-* structural properties
-* spatial patterns of spectral and structural properties
-* tree species classification for Marburg Open Forest
-
-## The Assingment
 
 Please develop a project that at least uses the results and data from the course work (ungraded assignment) to answer a self-chosen (research) question. 
 
