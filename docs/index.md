@@ -73,7 +73,7 @@ The graded course certificate will be based on a portfolio. The individual portf
 
 # Preparation and prerequisites
 
-The courses assumes basic knowledge and skills in remote sensing and GIS. Required R and GIS skills can be developed by the parallel courses [Data Analysis](https://ilias.uni-marburg.de/goto.php?target=crs_1655946&client_id=UNIMR){:target="_blank"} and [Geo Information Systems](https://ilias.uni-marburg.de/goto.php?target=crs_1656074&client_id=UNIMR){:target="_blank"}.
+The courses assumes basic knowledge and skills in remote sensing and GIS. Required R Remote Sensing and GIS skills can be developed by the parallel courses [Data Analysis](https://geomoer.github.io/moer-mpg-remote-sensing/){:target="_blank"}, [Geo Information Systems]( geomoer.github.io/moer-mpg-gis/){:target="_blank"} and [Remote Sensing]( geomoer.github.io/moer-mpg-remote-sensing/){:target="_blank"}.
 
 
 
