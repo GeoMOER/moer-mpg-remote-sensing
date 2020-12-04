@@ -15,7 +15,7 @@ A list of (minimum) available indices can be found in the [Index Data Base](http
 {: .notice--info}
  
 
-The principal component analysis (PCA) is widely used to reduce the dimensionality and arbitray effects in the data. In remote sensing based approaches it is most often an approach to reduce the number of bands without loosing to much information. That means it provides a smaller number but uncorrelated synthetic bands. Especially for the calculation of RGB-imagery based texture and structure analysis this seems to be a promising approach to rely on the maximum possible information in **one** synthetic band (usually the first main component).  Beside the basic implementation in the `raster` package (see [raster rs turorial](https://rspatial.org/rs/rs.pdf)) a convenient alternative package is [RStoolbox](https://bleutner.github.io/RStoolbox/rstbx-docu/RStoolbox.html) for performing this job.
+The principal component analysis (PCA) is widely used to reduce the dimensionality and arbitray effects in the data (see e.g.[Principal Component Methods in R: Practical Guide ](http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/112-pca-principal-component-analysis-essentials/)). In remote sensing based approaches it is most often an approach to reduce the number of bands without loosing to much information. That means it provides a smaller number but uncorrelated synthetic bands. Especially for the calculation of RGB-imagery based texture and structure analysis this seems to be a promising approach to rely on the maximum possible information in **one** synthetic band (usually the first main component).  Beside the basic implementation in the `raster` package (see [raster rs turorial](https://rspatial.org/rs/rs.pdf)) a convenient alternative package is [RStoolbox](https://bleutner.github.io/RStoolbox/rstbx-docu/RStoolbox.html) for performing this job.
 
 
 For getting an idea of the combination of (1) spectral indices, (2) textures and (3) a principal component analsysis (PCA) exemplarily have a look at [Li et al. 2019](https://www.mdpi.com/2072-4292/11/15/1763/pdf).
@@ -26,6 +26,25 @@ For getting an idea of the combination of (1) spectral indices, (2) textures and
 If the  computation is pixel-wise, only those original pixel values are included in the computation at a time which are located at the same position as the respective target pixel. Examples for this type of computation are any kind of spectral index values like the Normalized Different Vegetation Index (NDVI, see [this NASA page](https://earthobservatory.nasa.gov/Features/MeasuringVegetation/measuring_vegetation_2.php){:target="_blank"}). A principal component analysis, also based on the entire dataset, can also be regarded as pixel-wise since the final value of e.g. the first principal component at a specific pixel location results from the transformation of the original pixel values at this position. 
 
 A special type of pixel-wise computation is the aggregation of LiDAR or other point cloud values into a regular raster and compute information like the minimum or maximum value in this point cloud subset or the number of points etc.
+
+For the RGB based indes a basic call would look like:
+
+```
+# example calculat a vegetation indices from rgb image
+# VVI http://phl.upr.edu/projects/visible-vegetation-index-vvi
+# getting some example data
+library(link2GI)
+data('rgb', package = 'link2GI')  
+red =  rgb[[1]]
+green = rgb[[2]]
+blue = rgb[[3]]
+## calculate   Visible Vegetation Index (VVI)
+  VVI = (1 - abs((red - 30) / (red + 30))) * 
+        (1 - abs((green - 50) / (green + 50))) * 
+        (1 - abs((blue - 1) / (blue + 1)))
+raster::plot(VVI)
+
+```
 
 ### Neighborhood-based computation
 If the computation includes neighboring pixels, the value of the respective target pixel results from a odd number of original pixels located in e.g. a 3 by 3 or 5 by 5 neighborhood of the target pixel including the value of the original pixel in the the center. Examples for this type are any kind of spatial filters, e.g. a standard deviation filter. A prominent group is associated with grey level co-occurence matrix. In general, some filters can not only be based on a single original data layer but a stack of layers.
