@@ -45,6 +45,7 @@ blue = rgb[[3]]
 raster::plot(VVI)
 
 ```
+![]({{ site.baseurl }}/assets/images/vvi/vvi-1.png)
 
 ### Neighborhood-based computation
 If the computation includes neighboring pixels, the value of the respective target pixel results from a odd number of original pixels located in e.g. a 3 by 3 or 5 by 5 neighborhood of the target pixel including the value of the original pixel in the the center. Examples for this type are any kind of spatial filters, e.g. a standard deviation filter. A prominent group is associated with grey level co-occurence matrix. In general, some filters can not only be based on a single original data layer but a stack of layers.
@@ -55,12 +56,17 @@ The following gallery shows three examples of spatial filters.
 
 The sobel filter is computed using the following matrix supplied to the raster::focal function.
 ```r
+#getting data
+library(link2GI)
+data('rgb', package = 'link2GI'
+
 kx = matrix(c(-1,-2,-1,0,0,0,1,2,1), ncol=3)
 ky = matrix(c(1,0,-1,2,0,-2,1,0,-1), ncol=3)
 k = (kx**2 + ky**2)**0.5
 
 sobel_raster <- focal(original_raster, w=k)
 ```
+![]({{ site.baseurl }}/assets/images/sobel/sobel.png)
 
 ### Morphological feature computation
 A second spatial method aims in computing morphological features based on individual raster values. A typical data source is a digital elevation model and typical target datasets are raster showing the slope, exposition etc. of the surface. Actually this means the calculation of neighborhood indices and so on.
