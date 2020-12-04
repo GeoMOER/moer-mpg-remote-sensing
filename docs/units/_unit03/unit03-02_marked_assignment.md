@@ -1,5 +1,5 @@
 ---
-title: "Assignments"
+title: ""Graded Assignment RS Project"
 ---
 
 
@@ -8,7 +8,7 @@ Please develop a project that at least uses the results and data from the course
 
 This question can emphasize the methodological aspects or address an application-focused problem. 
 
-If enrolled in both courses, the remote results must be integrated.
+If enrolled in both courses, the GI findings must be integrated.
 
 
 Please consider the principles of transparency, reproducibility and communication mentioned in the basics. That is, the source code should be available on GitHub and the resulting article should follow the usual conventions of good scientific practice. 
