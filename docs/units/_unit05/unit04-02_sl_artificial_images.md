@@ -76,7 +76,7 @@ A second spatial method aims in computing morphological features based on indivi
 ## Starting with artifical image computation in R
 A good starting point for spatial filtering with R is the [raster::focal](https://www.rdocumentation.org/packages/raster/versions/2.7-15/topics/focal){:target="_blank"} function for "classic" spatial filtering or the [glcm package](https://cran.r-project.org/package=glcm){:target="_blank"} for grey level co-occurence matrix computations). For the latter, the [Orfeo ToolBox](https://www.orfeo-toolbox.org/){:target="_blank"} offers a faster and more comprehensive approach as given by the *Haralick texture* computation functions. To link it with R, see the [link2GI](https://cran.r-project.org/web/packages/link2GI/index.html){:target="_blank"} package.
 
-A simple but powerful tool is the otb wrapper integrated in link2GI. it works on the basis of the command line help of otb and generates command lists which can be executed with the function runOTB. A typical example is shown below.
+A simple but powerful tool is the otb wrapper integrated in link2GI. For starting you may find the [link2GI Articles and examples](https://r-spatial.github.io/link2GI/) helpful. the otb wrapper function is based on the command line help of the installed/linked OTB version and generate a valid command lists which can be executed with the helper function runOTB. A typical example is shown below.
 
 ```sh
 
