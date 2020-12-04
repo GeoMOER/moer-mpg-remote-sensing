@@ -58,13 +58,15 @@ The sobel filter is computed using the following matrix supplied to the raster::
 ```r
 #getting data
 library(link2GI)
-data('rgb', package = 'link2GI'
+library(raster)
+data('rgb', package = 'link2GI')
 
 kx = matrix(c(-1,-2,-1,0,0,0,1,2,1), ncol=3)
 ky = matrix(c(1,0,-1,2,0,-2,1,0,-1), ncol=3)
 k = (kx**2 + ky**2)**0.5
 
-sobel_raster <- focal(original_raster, w=k)
+sobel_raster <- focal(rgb[[1]], w=k)
+plot(sobel_raster)
 ```
 ![]({{ site.baseurl }}/assets/images/sobel/sobel.png)
 
