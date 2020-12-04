@@ -12,6 +12,10 @@ Artificial images can be used to highlight certain aspects of the spectral infor
 A list of (minimum) available indices can be found in the [Index Data Base](https://www.indexdatabase.de/db/i.php){:target="_blank"} of Verena Henrich and Katharina Brüser at Bonn University.
 {: .notice--info}
 
+The combination of spectral indices textures and Principal Component Analsysis (PCA) is shown exemplarily in [Li et al. 2019](https://www.mdpi.com/2072-4292/11/15/1763/pdf). 
+
+Generally spoken the  PCA Concept in remote sensing is used to reduce the dimensionality and arbitray effects in the data with the goal to retrieve a small number but uncorrelated bands. Especially for RGB texture and structure analysis this seems to be a promising approach to rely on the maximum possible information in one synthetic band.  Beside the ` raster` package [raster turorial](https://rspatial.org/rs/rs.pdf) a convenient alternative package is [RStoolbox](https://bleutner.github.io/RStoolbox/rstbx-docu/RStoolbox.html) for performing this job.
+
 
 ### Pixel-wise computation
 If the  computation is pixel-wise, only those original pixel values are included in the computation at a time which are located at the same position as the respective target pixel. Examples for this type of computation are any kind of spectral index values like the Normalized Different Vegetation Index (NDVI, see [this NASA page](https://earthobservatory.nasa.gov/Features/MeasuringVegetation/measuring_vegetation_2.php){:target="_blank"}). A principal component analysis, also based on the entire dataset, can also be regarded as pixel-wise since the final value of e.g. the first principal component at a specific pixel location results from the transformation of the original pixel values at this position. 
