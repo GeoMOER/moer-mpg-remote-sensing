@@ -7,15 +7,20 @@ Artificial images result from mathematical operations on image data. The operati
 <!--more-->
 
 ## Artifical image computations
-Artificial images can be used to highlight certain aspects of the spectral information recorded in the original dataset or its horizontal pattern. To compute artificial images, new values have to be calculated for each pixel in the original datasets (original data can be the initially recorded data or any other artificial image which has already been computed). For an extreme example on the utilization of artificial images see e.g. [Meyer et al. 2017](https://www.tandfonline.com/doi/abs/10.1080/2150704X.2017.1312026){:target="_blank"} who uses over 300 artificial images to estimate their usability in satellite rainfall retrievals.
+Artificial images can be used to highlight certain aspects of the spectral information recorded in the original dataset or its horizontal pattern. To compute artificial images, new values have to be calculated for each pixel in the original datasets (original data can be the initially recorded data or any other artificial image which has already been computed). 
+
+For an extreme example on the utilization of artificial images see e.g. [Meyer et al. 2017](https://www.tandfonline.com/doi/abs/10.1080/2150704X.2017.1312026){:target="_blank"} who uses over 300 artificial images to estimate their usability in satellite rainfall retrievals.
 
 A list of (minimum) available indices can be found in the [Index Data Base](https://www.indexdatabase.de/db/i.php){:target="_blank"} of Verena Henrich and Katharina Brüser at Bonn University.
 {: .notice--info}
+ 
 
-The combination of spectral indices textures and Principal Component Analsysis (PCA) is shown exemplarily in [Li et al. 2019](https://www.mdpi.com/2072-4292/11/15/1763/pdf). 
+The principal component analysis (PCA) is widely used to reduce the dimensionality and arbitray effects in the data. In remote sensing based approaches it is most often an approach to reduce the number of bands without loosing to much information. That means it provides a smaller number but uncorrelated synthetic bands. Especially for the calculation of RGB-imagery based texture and structure analysis this seems to be a promising approach to rely on the maximum possible information in **one** synthetic band (usually the first main component).  Beside the basic implementation in the `raster` package (see [raster rs turorial](https://rspatial.org/rs/rs.pdf)) a convenient alternative package is [RStoolbox](https://bleutner.github.io/RStoolbox/rstbx-docu/RStoolbox.html) for performing this job.
 
-Generally spoken the  PCA Concept in remote sensing is used to reduce the dimensionality and arbitray effects in the data with the goal to retrieve a small number but uncorrelated bands. Especially for RGB texture and structure analysis this seems to be a promising approach to rely on the maximum possible information in one synthetic band.  Beside the ` raster` package [raster turorial](https://rspatial.org/rs/rs.pdf) a convenient alternative package is [RStoolbox](https://bleutner.github.io/RStoolbox/rstbx-docu/RStoolbox.html) for performing this job.
 
+For getting an idea of the combination of (1) spectral indices, (2) textures and (3) a principal component analsysis (PCA) exemplarily have a look at [Li et al. 2019](https://www.mdpi.com/2072-4292/11/15/1763/pdf).
+
+## Computational Approaches
 
 ### Pixel-wise computation
 If the  computation is pixel-wise, only those original pixel values are included in the computation at a time which are located at the same position as the respective target pixel. Examples for this type of computation are any kind of spectral index values like the Normalized Different Vegetation Index (NDVI, see [this NASA page](https://earthobservatory.nasa.gov/Features/MeasuringVegetation/measuring_vegetation_2.php){:target="_blank"}). A principal component analysis, also based on the entire dataset, can also be regarded as pixel-wise since the final value of e.g. the first principal component at a specific pixel location results from the transformation of the original pixel values at this position. 
@@ -39,10 +44,10 @@ sobel_raster <- focal(original_raster, w=k)
 ```
 
 ### Morphological feature computation
-A second spatial method aims in computing morphological features based on individual raster values. A typical data source is a digital elevation model and typical target datasets are rasters showing the slope, exposition etc. of the surface.
+A second spatial method aims in computing morphological features based on individual raster values. A typical data source is a digital elevation model and typical target datasets are raster showing the slope, exposition etc. of the surface. Actually this means the calculation of neighborhood indices and so on.
 
 ## Starting with artifical image computation in R
-A good starting point for spatial filtering with R is the [raster::focal](https://www.rdocumentation.org/packages/raster/versions/2.7-15/topics/focal){:target="_blank"} function for "classic" spatial filtering or the [glcm package](https://cran.r-project.org/package=glcm){:target="_blank"} for grey level co-occurence matrix computations). For the latter, the [Orfeo ToolBox](https://www.orfeo-toolbox.org/){:target="_blank"} offers a large set of Haralick texture computation functions. To link it with R, see the [link2GI](https://cran.r-project.org/web/packages/link2GI/index.html){:target="_blank"} package and the otbtex_* functions of the [uavRst](https://github.com/gisma/uavRst){:target="_blank"} package.
+A good starting point for spatial filtering with R is the [raster::focal](https://www.rdocumentation.org/packages/raster/versions/2.7-15/topics/focal){:target="_blank"} function for "classic" spatial filtering or the [glcm package](https://cran.r-project.org/package=glcm){:target="_blank"} for grey level co-occurence matrix computations). For the latter, the [Orfeo ToolBox](https://www.orfeo-toolbox.org/){:target="_blank"} offers a faster and more comprehensive approach as given by the *Haralick texture* computation functions. To link it with R, see the [link2GI](https://cran.r-project.org/web/packages/link2GI/index.html){:target="_blank"} package and the otbtex_* functions of the [uavRst](https://github.com/gisma/uavRst){:target="_blank"} package.
 
 
 
