@@ -379,7 +379,17 @@ source("src/fun_rs/50_LLO_rf_classification.R")
 # Copyright: Chris Reudenbach, Thomas Nauss 2017,2020, GPL (>= 3)
 # git clone https://github.com/GeoMOER-Students-Space/msc-phygeo-class-of-2020-creu.git
 #------------------------------------------------------------------------------
+library(gtools)
+require(envimaR)
 
+# 1 - source files
+#-----------------
+
+source(file.path(envimaR::alternativeEnvi(root_folder = "~/edu/mpg-envinsys-plygrnd",
+                                          alt_env_id = "COMPUTERNAME",
+                                          alt_env_value = "PCRZP",
+                                          alt_env_root_folder = "F:/BEN/edu/mpg-envinsys-plygrnd"),
+                 "msc-phygeo-class-of-2020-creu/src/000_setup.R"))
 
 # 2 - define variables
 #---------------------
@@ -392,11 +402,6 @@ trainSites <- sf::st_transform(trainSites,crs=crs_rgb)
 # defining the croping extent
 ext <- extent(trainSites)
 
-# Get all *.tif files of a the folder you have specified to contain the original las files
-tif_files = list.files(envrmt$path_aerial_org, pattern = glob2rx("*.tif"), full.names = TRUE)
-
-# we create a unique combination of all files for a brute force comparision of the extents
-df = combinations(n = length(tif_files), r = 2, v = tif_files, repeats.allowed = FALSE)
 
 #---- The idea is to check for each unique pair of files if they have the same extent
 #     if so we fix the white area using the formula image A + image B - 255
@@ -408,27 +413,35 @@ df = combinations(n = length(tif_files), r = 2, v = tif_files, repeats.allowed =
 #-----------------------------------------
 
 ##-- correcting the white stripes
-no_comb = nrow(df)
-fixed = 0
-
-# for loop for each element of the data frame (nrow())
-
-
-for (i in 1:nrow(df)) {
-  if (raster(df[i,1])@extent==raster(df[i,2])@extent){ # compare the extent
-    cat("fix ",df[i,1]," ", df[i,2],"\n")        # output for information 
-    new_raster = stack(df[i,1]) + stack(df[i,2]) - 255  # formula to fix
-    cat("write ",paste0(envrmt$path_aerial_org,basename(max(df[i,]))),"\n") # output for information
-    writeRaster(new_raster,  paste0(envrmt$path_aerial_org,basename(max(df[i,]))),overwrite=T) # save it
-    cat("rename ",paste0(envrmt$path_aerial_org,basename(min(df[i,]))),"\n") # output for information
-    r_flist = append(r_flist,paste0(envrmt$path_aerial_org,basename(min(df[i,]))))
-    fixed = fixed + 1
-  } 
+tif_files = list.files(envrmt$path_aerial_org, pattern = glob2rx("*.tif"), full.names = TRUE)
+destripe_rgb(files = tif_files,
+                       envrmt = envrmt)
+if(file.exists(file.path(envrmt$path_aerial,"merged_mof.tif"))){
+  merged_mof = raster::stack(file.path(envrmt$path_aerial,"merged_mof.tif"))
+} else {
+##-- merge and reproject the single images
+tif_files = list.files(envrmt$path_aerial_org, pattern = glob2rx("*.tif"), full.names = TRUE)
+merged_mof = merge_rgb(files = tif_files,
+                       envrmt = envrmt,
+                       crs_code = crs_rgb)
 }
-cat(no_comb ," combinations checked\n ",fixed," images are fixed\n")
-file.remove(r_flist)
 
-##-- merge the single images
+# for more info ?extent
+cat("crop AOI\n")
+
+# cropping it 
+croppedRGB  =  crop(merged_mof, ext)	
+  
+
+# save the croped raster
+raster::writeRaster(croppedRGB,paste0(envrmt$path_aerial,"cropedRGB.tif"),overwrite=TRUE)
+```
+
+### Step 4 Identifying candidates for functions
+
+### merge_rgb 
+```r
+#-- merge the single images
 #---- now we need to merge these images to on big image
 #     again lets have a look what google tell us
 #     google expression: merging multiple rasters R cran     
@@ -437,45 +450,54 @@ file.remove(r_flist)
 
 # ok lets follow the rabbit
 
-# create a list for the files to be merged
-mofimg=list()
-# get new filelist
-tif_files = list.files(envrmt$path_aerial_org, pattern = glob2rx("*.tif"), full.names = TRUE)
-
-# stacking all files and put them in the list object
-cat("stack files...\n")
-for (f in 1:length(tif_files)){
-  mofimg[[f]] = stack(tif_files[f])
+merge_rgb = function(files=NULL,crs_code=NULL,envrmt=NULL){
+  # create a list for the files to be merged
+  mofimg=list()
+  # get new filelist
+  
+  
+  # stacking all files and put them in the list object
+  cat("stack files...\n")
+  for (f in 1:length(files)){
+    mofimg[[f]] = stack(files[f])
+  }
+  
+  # setting the merging parameters
+  mofimg$tolerance = 1
+  mofimg$filename  = paste0(envrmt$path_aerial,"merged_mof.tif")
+  mofimg$overwrite = TRUE
+  cat("merge files - this will take a while \n")
+  merged_mof = do.call(raster::merge, mofimg)
+  
+  # reproject it 
+  merged_mof = raster::projectRaster(merged_mof,crs = crs_code)
 }
 
-# setting the merging parameters
-mofimg$tolerance = 1
-mofimg$filename  = paste0(envrmt$path_aerial,"merged_mof.tif")
-mofimg$overwrite = TRUE
-cat("merge files - this will take a while \n")
-merged_mof = do.call(raster::merge, mofimg)
-
-# reproject it to 28632
-merged_mof = raster::projectRaster(merged_mof,crs = crs_rgb)
-
-# cropping it using the ?crop or ?clip and decide  
-# or google for something like "crop clip raster images R cran"
-# as a result you need a vector file or an extent
-# defining the extent object using the above defined params 
-# for more info ?extent
-cat("crop AOI\n")
-
-# merged_mof=raster::stack(file.path(envrmt$path_aerial,"merged_mof.tif"))
-
-# cropping it 
-croppedRGB  =  crop(merged_mof, ext)	
-
-# save the coped raster
-raster::writeRaster(croppedRGB,paste0(envrmt$path_aerial,"cropedRGB.tif"),overwrite=TRUE)
 ```
 
-### Step 4 Identifying candidates for functions
-
+### destripe_rgb
 ```r
-coming soon
+destripe_rgb = function(files = tif_files,
+                        envrmt = envrmt)
+  {
+  # we create a unique combination of all files for a brute force comparision of the extents
+  df = combinations(n = length(tif_files), r = 2, v = tif_files, repeats.allowed = FALSE)
+  no_comb = nrow(df)
+  fixed = 0
+  
+  # for loop for each element of the data frame (nrow())
+  for (i in 1:nrow(df)) {
+    if (raster(df[i,1])@extent==raster(df[i,2])@extent){ # compare the extent
+      cat("fix ",df[i,1]," ", df[i,2],"\n")        # output for information 
+      new_raster = stack(df[i,1]) + stack(df[i,2]) - 255  # formula to fix
+      cat("write ",paste0(envrmt$path_aerial_org,basename(max(df[i,]))),"\n") # output for information
+      writeRaster(new_raster,  paste0(envrmt$path_aerial_org,basename(max(df[i,]))),overwrite=T) # save it
+      cat("rename ",paste0(envrmt$path_aerial_org,basename(min(df[i,]))),"\n") # output for information
+      r_flist = append(r_flist,paste0(envrmt$path_aerial_org,basename(min(df[i,]))))
+      fixed = fixed + 1
+    } 
+  }
+  file.remove(r_flist)
+  return(message(no_comb ," combinations checked\n ",fixed," images are fixed\n"))
+}
 ```
