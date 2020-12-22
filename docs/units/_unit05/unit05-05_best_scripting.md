@@ -209,9 +209,9 @@ plotRGB(sapflow)
 
 
 ```
-### Adaption of 000_setup.R
 
-### Step 1 extract the general variables and functions
+
+### Step 1: Extract the general variables and functions - Adaption of 000_setup.R
 To utilize this concept we need to adapt the `000_setup.R` script. Basically we have add the argument `fkts` which is pointing to a folder which contains all of our functions - in this case the `cut_mof()` function. Additionally we have moved some of the common variables and options in the basic setup file. 
 
 ```r
@@ -301,7 +301,10 @@ return(envrmt)
 ```
 ### Step 2 Create a main control file
 
-We set up a preliminary master control file 00_classify_RGB.R
+We set up a preliminary master control file 00_classify_RGB.R This file has to rule the whole process. 
+
+Due to the fact that all other controll files are sourced we create a batch of variables products step by step. Keep in mind that this may result in weird situations if you are messing up in between variable names etc.
+{: .notice--danger}
 ```r
 #------------------------------------------------------------------------------
 # Type: control script 
@@ -358,4 +361,4 @@ source("src/fun_rs/50_LLO_rf_classification.R")
 
 
 ```
-### Step 3 The pre
+### Step 3 Now we identify candidates for functions
