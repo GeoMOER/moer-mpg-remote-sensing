@@ -438,23 +438,32 @@ raster::writeRaster(croppedRGB,paste0(envrmt$path_aerial,"cropedRGB.tif"),overwr
 ```
 
 ### Step 4 Identifying candidates for functions
+You will see that the pretty simple code for merging has obviously inflated. Why should we do so? Actually we have evolved a hard coded script into a fairly well documented function that is usable for for all kind of merging raster data. In addition if we provide a filename and extent for cropping the merged image it is also doing it. And last but not least if we provide a valid proj4 string it will reproject the result. So whenever we need to merge/crop/reproject raster files (which happens fairly often) we may use it. 
 
 ### merge_rgb 
 ```r
-#-- merge the single images
-#---- now we need to merge these images to on big image
-#     again lets have a look what google tell us
-#     google expression: merging multiple rasters R cran     
-#     https://stackoverflow.com/questions/15876591/merging-multiple-rasters-in-r
-#     with regards to Flo Detsch who asked it the right way
+#' merge single images
+#' @description  merge single geocoded images to on big image
+#' @param files list of filenames to be merged
+#' @param proj4 valid proj4 string 
+#' @param output valid path and name for the output image
+#' @details https://stackoverflow.com/questions/15876591/merging-multiple-rasters-in-r
+#'     with regards to Flo Detsch who asked it the right way
+#' @note if proj4 is NULL no reprojection is performed otherwise the merged raster is projected by using the proj4 string.      
+#' @return The merged image as a raster object 
+#' # example
+#' # tif_files is a list of valid filenames
+#' merged_r = merge_rgb(files = tif_files,
+#'                      out = file.path(tempdir(),"out.tif"))
+#' @export merge_rgb                     
+#' 
 
-# ok lets follow the rabbit
-
-merge_rgb = function(files=NULL,crs_code=NULL,envrmt=NULL){
+merge_rgb = function(files=NULL,proj4=NULL,output=NULL,cropoutput=NULL,ext=NULL){
   # create a list for the files to be merged
   mofimg=list()
   # get new filelist
   
+  if (is.null(files) || is.null(output)) return("Input/Output arguments are not valid\n")
   
   # stacking all files and put them in the list object
   cat("stack files...\n")
@@ -464,18 +473,26 @@ merge_rgb = function(files=NULL,crs_code=NULL,envrmt=NULL){
   
   # setting the merging parameters
   mofimg$tolerance = 1
-  mofimg$filename  = paste0(envrmt$path_aerial,"merged_mof.tif")
+  mofimg$filename  = output
   mofimg$overwrite = TRUE
+  if(!is.null(ext)){
+    mofimg$filename  = cropoutput
+    mofimg$ext = ext
+    }
   cat("merge files - this will take a while \n")
-  merged_mof = do.call(raster::merge, mofimg)
+  r = do.call(raster::merge, mofimg)
   
   # reproject it 
-  merged_mof = raster::projectRaster(merged_mof,crs = crs_code)
+  if (!is.null(proj)) r = raster::projectRaster(merged_mof,crs = proj4)
+  
+  return(r)
 }
-
 ```
 
 ### destripe_rgb
+
+Now it is your turn. Beneath you find the raw function for destriping. You may use the upper function as a kind of template to improve the destriping in a similar way.
+
 ```r
 destripe_rgb = function(files = tif_files,
                         envrmt = envrmt)
@@ -501,3 +518,7 @@ destripe_rgb = function(files = tif_files,
   return(message(no_comb ," combinations checked\n ",fixed," images are fixed\n"))
 }
 ```
+
+## Bring it together
+
+After extracting the functions you have to adapt the main script. This process of refinement will give you a good chance to re-think the implementation and structure of workflow and is a valuable opportunity to evaluate your concepts and code.
