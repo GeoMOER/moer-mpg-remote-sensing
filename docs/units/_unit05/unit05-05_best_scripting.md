@@ -472,14 +472,20 @@ merge_rgb = function(files=NULL,proj4=NULL,output=NULL,cropoutput=NULL,ext=NULL)
   }
   
   # setting the merging parameters
-  mofimg$tolerance = 1
-  mofimg$filename  = output
-  mofimg$overwrite = TRUE
+
   if(!is.null(ext)){
+    mofimg$tolerance = 1
+    mofimg$overwrite = TRUE
     mofimg$filename  = cropoutput
     mofimg$ext = ext
-    }
-  cat("merge files - this will take a while \n")
+    cat("merge and crop files - this will take a while \n")
+  } else {
+    mofimg$tolerance = 1
+    mofimg$filename  = output
+    mofimg$overwrite = TRUE
+    mofimg$ext = ext
+    cat("merge files - this will take a while \n")
+  }
   r = do.call(raster::merge, mofimg)
   
   # reproject it 
