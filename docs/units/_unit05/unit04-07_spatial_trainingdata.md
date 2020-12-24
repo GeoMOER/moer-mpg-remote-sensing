@@ -1,5 +1,5 @@
 ---
-title: "Spotlight: Spatial variable selection and prediction "
+title: "Spotlight: Variable selection and prediction "
 toc: true
 toc_label: In this example
 ---
@@ -330,6 +330,32 @@ training signifcantly
 names(trDF)
 names(filtered_trainDF)
 
-
-
 ```
+
+## A preliminary Prediction - How it may look like
+
+With the below results based on roughly 5000 training points we see a fairly good prediction of the tree species:
+```r
+# Overall Kappa 
+0.559 
+
+# varImp(ffsmodel_spatial)
+rf variable importance
+
+                   Overall
+opening_PCA       100.0000
+SAT                58.6676
+closing_PCA        20.9185
+VARI                5.7592
+Stat_Variance_PCA   5.3462
+dilate_PCA          0.7982
+blue                0.0000
+
+# ffsmodel_spatial$results
+  mtry  Accuracy     Kappa AccuracySD   KappaSD
+1    2 0.6683468 0.4970911   0.218904 0.2399864
+```
+The resulting image is looking a less satisfying. The major problem could be the coarse digitized training areas as well as the small number of used training points.
+
+{% include media url="/assets/misc/prediction-lloffs_map.html" %}
+[Full screen version of the map]({{ site.baseurl }}/assets/misc/prediction-lloffs_map.html){:target="_blank"}
