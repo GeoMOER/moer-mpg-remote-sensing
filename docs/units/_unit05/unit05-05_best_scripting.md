@@ -351,13 +351,21 @@ source(file.path(envimaR::alternativeEnvi(root_folder = "~/edu/mpg-envinsys-plyg
 # 2 start analysis 
 #-----------------
 ## source control 05 
-source(file.path(rootDir,"msc-phygeo-class-of-2020-creu/src/fun_rs/05_prepcrocess_RGB.R"))
+source(05_RS_prepcrocess_RGB.R")
 
 ## source control 20
-source("src/fun_rs/20_calculate_synthetic_bands.R")
+source("20_RScalculate_synthetic_bands.R")
+
+
+## source control 30
+source("30_RS_extract_training_df.R")
+
+## source control 30
+source("30_RS_prepare_training_df.R")
+
 
 ## source control 50
-source("src/fun_rs/50_LLO_rf_classification.R")
+source("50_RS_LLO_rf_classification.R")
 
 
 ```
@@ -569,4 +577,6 @@ destripe_rgb = function(files = tif_files,
 
 ## Bring it together
 
-After extracting the functions you have to adapt the main script. This process of refinement will give you a good chance to re-think the implementation and structure of workflow and is a valuable opportunity to evaluate your concepts and code.
+After extracting the functions you have to adapt the main script. This process of refinement will give you a good chance to re-think the implementation and structure of workflow and is a valuable opportunity to evaluate your concepts and code. 
+
+You will find more examples cloning the repo  `git clone https://github.com/GeoMOER-Students-Space/msc-phygeo-class-of-2020-creu.git`
